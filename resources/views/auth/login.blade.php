@@ -10,15 +10,14 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="form-group row">
-                                <label for="email" class="col-md-3 col-form-label text-md-left order-md-2" style="float: unset">ایمیل
+                                <label for="email" class="col-md-3 col-form-label text-md-left order-md-2" style="float: unset">نام کاربری
                                     :</label>
                                 <div class="col-md-6" style="margin-left: 21% ">
-                                    <input id="email" type="email"
+                                    <input id="email" type="text"
                                            class="form-control @error('email') is-invalid @enderror" name="email"
                                            value="{{ old('email') }}" required autocomplete="email" autofocus>
-
                                     @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback pull-right text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror

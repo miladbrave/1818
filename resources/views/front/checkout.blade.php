@@ -79,21 +79,6 @@
                                                 <fieldset id="address" class="required">
                                                     <div class="form-group col-md-3">
                                                         <label for="input-payment-company"
-                                                               class="control-label">نام</label>
-                                                        <input type="text" class="form-control"
-                                                               id="input-payment-company"
-                                                               placeholder="نام" value="{{$user->fname}}" name="fname">
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label for="input-payment-company"
-                                                               class="control-label">نام خانوادگی</label>
-                                                        <input type="text" class="form-control"
-                                                               id="input-payment-company"
-                                                               placeholder="نام خانوادگی" value="{{$user->lname}}"
-                                                               name="lname">
-                                                    </div>
-                                                    <div class="form-group col-md-3">
-                                                        <label for="input-payment-company"
                                                                class="control-label">ایمیل</label>
                                                         <input type="text" class="form-control"
                                                                id="input-payment-company"
@@ -107,6 +92,22 @@
                                                                id="input-payment-company"
                                                                placeholder="تلفن" value="{{$user->phone}}" name="phone">
                                                     </div>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="input-payment-company"
+                                                               class="control-label">نام خانوادگی</label>
+                                                        <input type="text" class="form-control"
+                                                               id="input-payment-company"
+                                                               placeholder="نام خانوادگی" value="{{$user->lname}}"
+                                                               name="lname">
+                                                    </div>
+                                                    <div class="form-group col-md-3">
+                                                        <label for="input-payment-company"
+                                                               class="control-label">نام</label>
+                                                        <input type="text" class="form-control"
+                                                               id="input-payment-company"
+                                                               placeholder="نام" value="{{$user->fname}}" name="fname">
+                                                    </div>
+
                                                     <div class="form-group required col-md-4">
                                                         <label for="input-payment-city"
                                                                class="control-label">استان</label>
@@ -120,7 +121,7 @@
                                                         <input type="text" class="form-control" id="input-payment-city"
                                                                placeholder="شهر" value="{{$user->city}}" name="city">
                                                     </div>
-                                                    <div class="form-group required col-md-4">
+                                                    <div class="form-group col-md-4">
                                                         <label for="input-payment-postcode" class="control-label">کد
                                                             پستی</label>
                                                         <input type="text" class="form-control"

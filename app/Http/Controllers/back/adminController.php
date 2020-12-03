@@ -12,7 +12,7 @@ class adminController extends Controller
 {
     public function index()
     {
-        $admins = User::where('admin','admin')->get();
+        $admins = User::where('admin', 'admin')->get();
         return view('back.admin.admin', compact('admins'));
     }
 
@@ -47,13 +47,15 @@ class adminController extends Controller
 
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
-        if($user->admin == "user")
+        $user = User::where('email', $id)->first();
+        if ($user->admin == "user") {
             $user->delete();
+        }
 
-        if ($user->admin == "admin")
+        if ($user->admin == "admin") {
             $user->admin = "user";
             $user->save();
+        }
 
         return back();
     }

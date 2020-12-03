@@ -502,7 +502,7 @@ a:focus { outline:none; }
 #menu.navbar {
 	border-radius:0px;
 	min-height:inherit;
-    margin-top: 21px;
+    margin-top: 17px;
 }
 #menu .navbar-nav {
 	float:none;
@@ -2258,7 +2258,7 @@ div.required .control-label:before {
 .wrapper1 {
     position: relative;
     top: 50%;
-    left: 81%;
+    left: 76%;
     transform: translate(-50%, -50%);
     width: 100%;
 }
@@ -2619,37 +2619,17 @@ div.required .control-label:before {
 #tabs{border-bottom: #d1d1d1 1px solid;padding: 15px 0px 15px 0px;width: 100%}
 .logo-text{font-family: 'IRANSansWeb', sans-serif;font-size: 15px;text-align: right;color: red}
 @media screen and (max-width: 520px) {
-    .logo-text {
-        font-size: 11px;
-        width: 39%;
-        margin-right: 5%
-    }
-    #subset table {
-        font-size: 10px
-    }
-    .pro .nav-pills img {
-        width: 13%;
-        margin-left: 5%;
-    }
-    .pro .nav-pills a {
-        border-radius: 15px !important;
-        color: white;
-        font-size: 13px;
-        font-weight: bold;
-        font-family: 'IRANSansWeb', sans-serif;
-        text-align: justify;
-    }
-    #menu .nav > li > .dropdown-menu ul > li {
-        margin-right: 5px
-    }
-    #header #search input {
-        height: 24px;
-        width: 36%;
-        font-size: 13px;
-        margin-right: 7%
-    }
+    .logo-text {font-size: 11px;width: 39%;margin-right: 5%}
+    #subset table {font-size: 10px}
+    .pro .nav-pills img {width: 13%;margin-left: 5%;}
+    .pro .nav-pills a {border-radius: 15px !important;color: white;font-size: 13px;font-weight: bold;
+        font-family: 'IRANSansWeb', sans-serif;text-align: justify;}
+    #menu .nav > li > .dropdown-menu ul > li {margin-right: 5px}
+    #header #search input {height: 24px;width: 36%;font-size: 13px;margin-right: 7%}
     .logo-text{text-align: center}
     #header #cart{margin-right: 27%!important;}
+    .wrapper1{left:83%!important;}
+
 }
 @media screen and (min-width: 1000px){
     #subset .col-md-12{width: 100%!important;}

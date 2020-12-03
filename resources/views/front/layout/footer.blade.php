@@ -7,7 +7,7 @@
                     <p>
                         این فروشگاه اینترنتی به مدیریت مهندس محمد حسین مدافعی مفتخر است قطعات کامل خودرویی مخصوصا ریو به
                         صورت اصل در تبریز را بصورت
-                        آنلاین و همچنین حضوری ارائه نماید .
+                        آنلاین و همچنین حضوری ارائه نماید.
                     </p>
 
                 </div>
@@ -24,9 +24,11 @@
                                         crossorigin="anonymous">
                                     <div class="wrapper1">
                                         <ul>
-                                            <li class="instagram"><a href="https://www.instagram.com/azar_yadak_rio/?hl=en"><i class="fa fa-instagram fa-2x"
-                                                                                 aria-hidden="true"
-                                                                                 style="font-size: 26px"></i></a></li>
+                                            <li class="instagram"><a
+                                                    href="https://www.instagram.com/azar_yadak_rio/?hl=en"><i
+                                                        class="fa fa-instagram fa-2x"
+                                                        aria-hidden="true"
+                                                        style="font-size: 26px"></i></a></li>
                                             <li class="whatsapp"><a href="#"><i class="fa fa-whatsapp fa-2x"
                                                                                 aria-hidden="true"
                                                                                 style="font-size: 26px"></i></a></li>
@@ -36,12 +38,15 @@
                             </div>
                         </div>
                         <div class="col-md-6 text-center">
-                            <img src="{{asset('/front/img/l1.png')}}" width="70%" alt="logo" style="margin-top: -12px">
+                            <a href="{{route('home')}}">
+                                <img src="{{asset('/front/img/l1.png')}}" width="70%" alt="logo"
+                                     style="margin-top: -12px">
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
-{{--                    <a href="#"><img src="{{asset('/front/img/1.png')}}" alt="" style="width: 100%"></a>--}}
+                    {{--                    <a href="#"><img src="{{asset('/front/img/1.png')}}" alt="" style="width: 100%"></a>--}}
                 </div>
             </div>
             <div class="custom-text text-center">

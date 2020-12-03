@@ -31,10 +31,10 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group @if($errors->has('laname')) has-error @endif">
-                                                <label><span class="text-danger">*</span>نام محصول (لاتین)</label>
+                                                <label>نام محصول (لاتین)</label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                                                    <input type="text" class="form-control" name="laname" required
+                                                    <input type="text" class="form-control" name="laname"
                                                            value="{{old('laname')}}">
                                                 </div>
                                             </div>
@@ -66,7 +66,7 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group @if($errors->has('price')) has-error @endif">
-                                                <label><span class="text-danger">*</span>قیمت (تومان)</label>
+                                                <label><span class="text-danger">*</span>قیمت (ریال)</label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-money"></i></span>
                                                     <input type="text" class="form-control" name="price" required
@@ -116,7 +116,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group" style="padding: 3% 3%">
                                                 <label>توضیحات محصول</label>
-                                                <textarea id="textareaDes" name="des"
+                                                <textarea id="textareaDes" name="des" required
                                                           class="editor form-control"> </textarea>
                                             </div>
                                         </div>

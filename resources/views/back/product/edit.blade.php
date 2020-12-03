@@ -33,10 +33,10 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group @if($errors->has('laname')) has-error @endif">
-                                                <label><span class="text-danger">*</span>نام محصول (لاتین)</label>
+                                                <label>نام محصول (لاتین)</label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                                                    <input type="text" class="form-control" name="laname" required
+                                                    <input type="text" class="form-control" name="laname"
                                                            value="{{$product->lname}}">
                                                 </div>
                                             </div>
@@ -70,7 +70,7 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group @if($errors->has('price')) has-error @endif">
-                                                <label><span class="text-danger">*</span>قیمت (تومان)</label>
+                                                <label><span class="text-danger">*</span>قیمت (ریال)</label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-money"></i></span>
                                                     <input type="text" class="form-control" name="price" required
@@ -108,11 +108,11 @@
                                                     <option value="3" @if($product->type == 3) selected @endif>برقی و سنسورها</option>
                                                     <option value="4" @if($product->type == 4) selected @endif> روغن، فیلترها</option>
                                                     <option value="5" @if($product->type == 5) selected @endif>سیستم تعلیق وجلوبندی</option>
-                                                    <option value="5" @if($product->type == 6) selected @endif> لوازم جانبی</option>
-                                                    <option value="5" @if($product->type == 7) selected @endif>لوازم هیدرولیک فرمان</option>
-                                                    <option value="5" @if($product->type == 8) selected @endif>لوازم سیستم ترمز</option>
-                                                    <option value="5" @if($product->type == 9) selected @endif>تزئینات</option>
-                                                    <option value="5" @if($product->type == 10) selected @endif>لوازم سیستم خنکاری </option>
+                                                    <option value="6" @if($product->type == 6) selected @endif> لوازم جانبی</option>
+                                                    <option value="7" @if($product->type == 7) selected @endif>لوازم هیدرولیک فرمان</option>
+                                                    <option value="8" @if($product->type == 8) selected @endif>لوازم سیستم ترمز</option>
+                                                    <option value="9" @if($product->type == 9) selected @endif>تزئینات</option>
+                                                    <option value="10" @if($product->type == 10) selected @endif>لوازم سیستم خنکاری </option>
                                                 </select>
                                             </div>
                                         </div>

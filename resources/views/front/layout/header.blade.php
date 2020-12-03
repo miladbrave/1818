@@ -178,7 +178,9 @@
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 inner">
-                        <img src="{{asset('/front/img/rio.png')}}" alt="test" class="himg">
+                        <a href="{{route('home')}}">
+                            <img src="{{asset('/front/img/rio.png')}}" alt="rio" class="himg">
+                        </a>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 inner">
                         <div id="search" class="input-group">
@@ -215,18 +217,18 @@
                                                             <li>
                                                                 <a href="{{route('category',['id'=>$maincategory->title])}}">{{$maincategory->title}}
                                                                     <span>&rsaquo;</span></a>
-{{--                                                                <div class="dropdown-menu">--}}
-{{--                                                                    <ul>--}}
-{{--                                                                        @foreach($subcategories as $subcategory)--}}
+                                                                {{--                                                                <div class="dropdown-menu">--}}
+                                                                {{--                                                                    <ul>--}}
+                                                                {{--                                                                        @foreach($subcategories as $subcategory)--}}
 
-{{--                                                                            @if($maincategory->id == $subcategory->type)--}}
-{{--                                                                                <li>--}}
-{{--                                                                                    <a href="{{route('category',['id'=>$subcategory->title])}}">{{$subcategory->title}} </a>--}}
-{{--                                                                                </li>--}}
-{{--                                                                            @endif--}}
-{{--                                                                        @endforeach--}}
-{{--                                                                    </ul>--}}
-{{--                                                                </div>--}}
+                                                                {{--                                                                            @if($maincategory->id == $subcategory->type)--}}
+                                                                {{--                                                                                <li>--}}
+                                                                {{--                                                                                    <a href="{{route('category',['id'=>$subcategory->title])}}">{{$subcategory->title}} </a>--}}
+                                                                {{--                                                                                </li>--}}
+                                                                {{--                                                                            @endif--}}
+                                                                {{--                                                                        @endforeach--}}
+                                                                {{--                                                                    </ul>--}}
+                                                                {{--                                                                </div>--}}
                                                             </li>
                                                         @endif
                                                     @endforeach

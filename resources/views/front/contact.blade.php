@@ -17,7 +17,8 @@
                         <div class="col-sm-3"><strong>آدرس</strong><br/>
                             <address>
                                 آذربایجان شرقی، تبریز<br/>
-                                دیزل آباد
+                                چهار اره شهید بهشتی<br/>
+                                (منصور سابق)
                             </address>
                         </div>
                         <div class="col-sm-3" style="direction: ltr"><strong>شماره تلفن</strong><br>
@@ -35,8 +36,7 @@
                         <div class="col-md-12" style="margin-bottom: 2%">
                             <h5 style="line-height: 25px;font-family: 'IRANSansWeb', sans-serif">مشتریان گرامی جهت
                                 پرداخت بصورت کارت به کارت میتوانند مبلغ مورد نظر را به شماره کارت زیر پرداخت نموده، سپس
-                                اسکرین شات مربوط به پرداخت را به شماره موبایل مذکور در بالا ارسال نمایند
-                                <span class="text-danger">(دقت بفرمایید که هزینه ارسال نیز پرداخت شود)</span>
+                                اسکرین شات مربوط به پرداخت را به شماره موبایل مذکور در بالا ارسال نمایند.
                             </h5>
                         </div>
 
@@ -138,3 +138,5 @@
 
 
 @endsection
+
+
