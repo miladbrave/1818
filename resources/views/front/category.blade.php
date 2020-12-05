@@ -9,13 +9,13 @@
                     <div class="box-category">
                         <ul id="cat_accordion">
                             @foreach($navcategories as $nav)
-                                <li><a href="javascript:;">{{$nav->title}}</a> <span
+                                <li><a href="{{route('category',['id'=>$nav->title])}}">{{$nav->title}}</a> <span
                                         class="down"></span>
                                     <ul style="display:block;">
                                         @foreach($maincategories as $main)
                                             @if($nav->title == $main->type)
                                                 <li>
-                                                    <a href="{{route('category',['id'=>$main->title])}}">{{$main->title}}</a>
+                                                    <a href="{{route('category',['id'=>$main->title])}}" class="text-danger">{{$main->title}}</a>
                                                     <span class="down"></span>
                                                     <ul>
                                                         @foreach($subcategories as $sub)
@@ -99,57 +99,111 @@
                                                     src="{{asset($product->photos()->first()->path)}}"
                                                     alt="{{$product->name}}" title="{{$product->name}}"
                                                     class="img-responsive"/></a></div>
-                                        <div>
-                                            <div class="caption">
-                                                <h3>
-                                                    <a href="{{route('product.self',$product->slug)}}"> {{$product->name}} </a>
-                                                </h3>
-                                                <p>{!! Str::limit($product->description,150) !!}</p>
-                                                @if($product->exist == 1)
-                                                    @if($product->discount)
-                                                        <p class="price">
-                                                            <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span><br>
-                                                            <span
-                                                                class="price-old">{{$product->price}} ریال</span>
-                                                            <span
-                                                                class="saving">-{{$product->discount}}%</span>
-                                                        </p>
-                                                    @else
-                                                        <p class="price">
-                                                            <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
-                                                        </p>
-                                                    @endif
-                                                @elseif($product->exist == 2)
-                                                    <h4 style="padding-bottom: 15%;font-weight: bold;color: red">موجود
-                                                        نمی
-                                                        باشد.</h4>
+                                        <div class="caption main">
+                                            <h3>
+                                                <a href="{{route('product.self',$product->slug)}}"> {{$product->name}} </a>
+                                            </h3>
+                                            {{--                                                <p>{!! Str::limit($product->description,150) !!}</p>--}}
+                                            @if($product->exist == 1)
+                                                @if($product->discount)
+                                                    <p class="price">
+                                                        <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span><br>
+                                                        <span
+                                                            class="price-old">{{$product->price}} ریال</span>
+                                                        <span
+                                                            class="saving">-{{$product->discount}}%</span>
+                                                    </p>
+                                                @else
+                                                    <p class="price">
+                                                        <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    </p>
                                                 @endif
-                                                @if($product->exist == 1)
-                                                    @if($product->count > 0)
-                                                        <div class="button-group pull-right">
-                                                            <h5 class="text-info"> در انبار {{$product->count}} عدد</h5>
-                                                        </div>
-                                                        <div class="btn btn-success pull-left"
-                                                             style="border-radius: 10px">
-                                                            {{--                                                            <i class="fa fa-cart-plus" style="font-size: 20px"></i>--}}
-                                                            <a class="btn-success"
-                                                               href="{{route('add.cart',['id'=>$product->id])}}"><span>                                                            <i
-                                                                        class="fa fa-cart-plus"
-                                                                        style="font-size: 20px"></i>
+                                            @elseif($product->exist == 2)
+                                                <h4 style="padding-bottom: 15%;font-weight: bold;color: red">موجود
+                                                    نمی
+                                                    باشد.</h4>
+                                            @endif
+                                            @if($product->exist == 1)
+                                                @if($product->count > 0)
+                                                    <div class="button-group pull-right">
+                                                        <h5 class="text-info"> در انبار {{$product->count}} عدد</h5>
+                                                    </div>
+                                                    <div class="btn btn-success pull-left"
+                                                         style="border-radius: 10px">
+                                                        {{--                                                            <i class="fa fa-cart-plus" style="font-size: 20px"></i>--}}
+                                                        <a class="btn-success"
+                                                           href="{{route('add.cart',['id'=>$product->id])}}"><span>                                                            <i
+                                                                    class="fa fa-cart-plus"
+                                                                    style="font-size: 20px"></i>
                                                                         افزودن به سبد</span>
-                                                            </a>
-                                                        </div>
-                                                    @else
-                                                        <span class="text-danger">اتمام موجودی انبار</span>
-                                                    @endif
+                                                        </a>
+                                                    </div>
+                                                @else
+                                                    <span class="text-danger">اتمام موجودی انبار</span>
                                                 @endif
-                                            </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
                         @endif
-                        @if(!isset($product))
+                        @if(!isset($product) && $rand->isNotEmpty())
+                            @foreach($rand->random(1) as $ran)
+                                <div class="product-layout product-list col-xs-12">
+                                    <div class="product-thumb">
+                                        <div class="image"><a href="{{route('product.self',$ran->slug)}}"><img
+                                                    src="{{asset($ran->photos()->first()->path)}}"
+                                                    alt="{{$ran->name}}" title="{{$ran->name}}"
+                                                    class="img-responsive"/></a></div>
+                                        <div class="caption main">
+                                            <h3>
+                                                <a href="{{route('product.self',$ran->slug)}}"> {{$ran->name}} </a>
+                                            </h3>
+                                            {{--                                                <p>{!! Str::limit($product->description,150) !!}</p>--}}
+                                            @if($ran->exist == 1)
+                                                @if($ran->discount)
+                                                    <p class="price">
+                                                        <span class="price-new">{{\App\Helpers\Helpers::discount($ran->price,$ran->discount)}} ریال</span><br>
+                                                        <span
+                                                            class="price-old">{{$ran->price}} ریال</span>
+                                                        <span
+                                                            class="saving">-{{$ran->discount}}%</span>
+                                                    </p>
+                                                @else
+                                                    <p class="price">
+                                                        <span class="price-new">{{\App\Helpers\Helpers::discount($ran->price,$ran->discount)}} ریال</span>
+                                                    </p>
+                                                @endif
+                                            @elseif($product->exist == 2)
+                                                <h4 style="padding-bottom: 15%;font-weight: bold;color: red">موجود
+                                                    نمی
+                                                    باشد.</h4>
+                                            @endif
+                                            @if($ran->exist == 1)
+                                                @if($ran->count > 0)
+                                                    <div class="button-group pull-right">
+                                                        <h5 class="text-info"> در انبار {{$ran->count}} عدد</h5>
+                                                    </div>
+                                                    <div class="btn btn-success pull-left"
+                                                         style="border-radius: 10px">
+                                                        {{--                                                            <i class="fa fa-cart-plus" style="font-size: 20px"></i>--}}
+                                                        <a class="btn-success"
+                                                           href="{{route('add.cart',['id'=>$ran->id])}}"><span>                                                            <i
+                                                                    class="fa fa-cart-plus"
+                                                                    style="font-size: 20px"></i>
+                                                                        افزودن به سبد</span>
+                                                        </a>
+                                                    </div>
+                                                @else
+                                                    <span class="text-danger">اتمام موجودی انبار</span>
+                                                @endif
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
+                        @if(!isset($product) && $rand->isEmpty())
                             <h2 class="text-danger">متاسفانه محصولی یافت نشد!</h2>
                         @endif
                     </div>

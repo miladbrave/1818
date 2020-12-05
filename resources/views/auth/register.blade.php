@@ -17,7 +17,7 @@
                                            name="fname"
                                            value="{{ old('fname') }}" required autocomplete="fname" autofocus>
                                     @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback pull-right text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -31,7 +31,7 @@
                                            name="lname"
                                            value="{{ old('lname') }}" required autocomplete="lname" autofocus>
                                     @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback pull-right text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -45,7 +45,7 @@
                                            class="form-control @error('email') is-invalid @enderror" name="email"
                                            value="{{ old('email') }}" required autocomplete="email">
                                     @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback pull-right text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -60,7 +60,7 @@
                                            name="phone" value="{{ old('phone') }}" required autocomplete="phone"
                                            data-mask="99999999999">
                                     @error('phone')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback pull-right text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
@@ -75,7 +75,7 @@
                                            required autocomplete="new-password">
 
                                     @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback pull-right text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror

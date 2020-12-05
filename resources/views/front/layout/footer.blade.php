@@ -29,7 +29,7 @@
                                                         class="fa fa-instagram fa-2x"
                                                         aria-hidden="true"
                                                         style="font-size: 26px"></i></a></li>
-                                            <li class="whatsapp"><a href="#"><i class="fa fa-whatsapp fa-2x"
+                                            <li class="whatsapp"><a href="https://api.whatsapp.com/send?phone=989149163726"><i class="fa fa-whatsapp fa-2x"
                                                                                 aria-hidden="true"
                                                                                 style="font-size: 26px"></i></a></li>
                                         </ul>

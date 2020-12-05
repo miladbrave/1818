@@ -106,6 +106,7 @@ a:hover, a b:hover, .category .tabs li a:hover, .sitemap li a:hover, .pagination
 	font-size:18px;
     font-family: 'IRANSansWeb', sans-serif;
     font-weight: bold;
+    height: 50px;
 }
 /*===================================================================================*/
 /*  Product Thumb

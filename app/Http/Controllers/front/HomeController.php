@@ -35,7 +35,7 @@ class HomeController extends Controller
         $banners = Banner::with('photo')->where('distribute', 'انتشار')->get();
         $products = Product::with('photos', 'attributevalus', 'categories')->where('distribute', 'انتشار')->get();
         $videos = Video::with('photo')->get();
-        return view('front.index', compact('navcategories', 'maincategories', 'subcategories', 'sliders', 'banners', 'products','videos'));
+        return view('front.index', compact('navcategories', 'maincategories', 'subcategories', 'sliders', 'banners', 'products', 'videos'));
     }
 
     public function about()
@@ -83,8 +83,11 @@ class HomeController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->get();
         }
+        $rand = Product::with('categories')->whereHas('categories', function ($q) use ($id) {
+            $q->where('type', $id);
+        })->get();
 
-        return view('front.category', compact('navcategories', 'maincategories', 'subcategories', 'products', 'title'));
+        return view('front.category', compact('navcategories', 'maincategories', 'subcategories', 'products', 'title','rand'));
     }
 
     public function checkout()
@@ -122,13 +125,13 @@ class HomeController extends Controller
         $maincategories = Category::where('type', '!=', 'null')->get();
         $subcategories = Category::whereRaw("type REGEXP '^[0-9]'")->get();
         $product = Product::with('categories', 'photos', 'attributevalus')->where('slug', $slug)->first();
-        $brand = Brand::where('id',$product->brand_id)->first();
+        $brand = Brand::where('id', $product->brand_id)->first();
         $categoryIds = $product->categories->pluck('id')->toArray();
         $relatedProducts = Product::with('categories', 'photos')->whereHas('categories', function ($q) use ($categoryIds) {
             $q->whereIn('categories.id', $categoryIds);
         })->get();
         $randomProducts = Product::with('photos')->get()->random(2);
-        return view('front.product', compact('navcategories', 'maincategories', 'subcategories', 'product', 'relatedProducts','randomProducts','brand'));
+        return view('front.product', compact('navcategories', 'maincategories', 'subcategories', 'product', 'relatedProducts', 'randomProducts', 'brand'));
     }
 
     public function addcart(Request $request, $id)
@@ -151,7 +154,7 @@ class HomeController extends Controller
         $cart->remove($product, $product->id);
         $request->session()->put('cart', $cart);
         unset($cart->items[$id]);
-        if (!$cart->items){
+        if (!$cart->items) {
             Session::forget('cart');
             return redirect()->route('home');
         }
@@ -334,7 +337,7 @@ class HomeController extends Controller
     public static function sendmail($id)
     {
         $user = User::findOrFail($id);
-        $userlists = Userlist::where('user_id', $id)->where('status','success')->latest('created_at')->first();
+        $userlists = Userlist::where('user_id', $id)->where('status', 'success')->latest('created_at')->first();
         foreach ($userlists->pluck('id') as $userlist) {
             $purchlist[] = Purchlist::whereIn('factor_number', [$userlist])->get();
         }
@@ -349,9 +352,9 @@ class HomeController extends Controller
                 'purchlists' => $purchlist,
                 'purchl' => $purchl,
             ], function ($m) use ($user) {
-            $m->from('info@1818kala.ir', 'آذر یدک ریو');
-            $m->to($user->email, $user->name)->subject('فاکتور خرید(1818kala.ir)');
-        });
+                $m->from('info@1818kala.ir', 'آذر یدک ریو');
+                $m->to($user->email, $user->name)->subject('فاکتور خرید(1818kala.ir)');
+            });
 
         Mail::send('front/mail',
             [
@@ -373,8 +376,8 @@ class HomeController extends Controller
         $maincategories = Category::where('type', '!=', 'null')->get();
         $subcategories = Category::whereRaw("type REGEXP '^[0-9]'")->get();
         $blogs = Blog::with('photo')->get();
-        $blogPhotos = Photo::where('blog_file','!=' ,null)->distinct()->get('blog_file')->toArray();
-        return view('front.blog',compact('navcategories', 'maincategories', 'subcategories','blogs','blogPhotos'));
+        $blogPhotos = Photo::where('blog_file', '!=', null)->distinct()->get('blog_file')->toArray();
+        return view('front.blog', compact('navcategories', 'maincategories', 'subcategories', 'blogs', 'blogPhotos'));
     }
 
 
@@ -389,10 +392,9 @@ class HomeController extends Controller
 
     public function download($id)
     {
-        $photos = Photo::where('blog_file',$id)->first();
-        foreach ($photos as $photo)
-        {
-             return response()->download(getcwd().$photos->path);
+        $photos = Photo::where('blog_file', $id)->first();
+        foreach ($photos as $photo) {
+            return response()->download(getcwd() . $photos->path);
         }
     }
 

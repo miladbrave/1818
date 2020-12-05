@@ -6,6 +6,7 @@ use App\Brand;
 use App\Http\Controllers\Controller;
 use App\Photo;
 use App\Product;
+use App\Purchlist;
 use Illuminate\Http\Request;
 
 class productController extends Controller
@@ -173,5 +174,11 @@ class productController extends Controller
         $products = Product::all();
         $response = ['products' => $products];
         return response()->json( $response , 200);
+    }
+
+    public function celler()
+    {
+        $products = Product::orderBy('count', 'ASC')->paginate(20);
+        return view('back.product.seller',compact('products'));
     }
 }

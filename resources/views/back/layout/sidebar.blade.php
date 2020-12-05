@@ -18,6 +18,7 @@
             <ul class="nav collapse">
                 <li><a href="{{route('product.create')}}"><span class="title"> محصول جدید</span></a></li>
                 <li><a href="{{route('product.index')}}"><span class="title">لیست محصول</span></a></li>
+                <li><a href="{{route('celler')}}"><span class="title">لیست انبار</span></a></li>
             </ul>
         </li>
         <li class="has-sub">

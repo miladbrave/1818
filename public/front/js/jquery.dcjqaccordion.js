@@ -12,7 +12,7 @@
 
 	$.fn.cutomAccordion = function(options) {
 
-		//set default options 
+		//set default options
 		var defaults = {
 			classParent	 : 'cutom-parent',
 			classActive	 : 'active',
@@ -44,9 +44,9 @@
 				$objLinks = $('li:not(.'+defaults.classDisable+') > a',obj);
 				$objSub = $('li:not(.'+defaults.classDisable+') > ul',obj);
 			}
-			
+
 			classActive = defaults.classActive;
-			
+
 			setUpAccordion();
 			if(defaults.saveState == true){
 				checkCookie(defaults.cookie, obj, classActive);
@@ -79,7 +79,6 @@
 
 				// Disable parent links
 				if(defaults.disableLink == true){
-
 					$objLinks.click(function(e){
 						if($(this).siblings('ul').length >0){
 							e.preventDefault();
@@ -88,7 +87,7 @@
 				}
 
 			} else {
-			
+
 				$objLinks.click(function(e){
 
 					$activeLi = $(this).parent('li');
@@ -114,7 +113,7 @@
 						$(this).siblings('ul').slideToggle(defaults.speed);
 						$('> a',$activeLi).addClass(classActive);
 					}
-					
+
 					// Write cookie if save state is on
 					if(defaults.saveState == true){
 						createCookie(defaults.cookie, obj, classActive);
@@ -149,7 +148,7 @@
 					});
 				}
 			}
-			
+
 			function linkOver(){
 
 			$activeLi = $(this).parent('li');
@@ -236,5 +235,6 @@
 			// Store in cookie
 			$.cookie(cookieId, activeIndex, { path: '/' });
 		}
+
 	};
 })(jQuery);

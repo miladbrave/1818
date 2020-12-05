@@ -209,8 +209,8 @@
                                 <ul style="display: inline-flex; list-style: none;">
                                     @foreach($navcategories as $navcategory)
                                         <li class="dropdown" style=" display: inline;">
-                                            <a href="javascript: void(0)">{{$navcategory->title}}</a>
-                                            <div class="dropdown-menu">
+                                            <a href="{{route('category',['id'=>$navcategory->title])}}">{{$navcategory->title}}</a>
+                                            <div class="dropdown-menu" style="margin-top: -1px">
                                                 <ul>
                                                     @foreach($maincategories as $maincategory)
                                                         @if($navcategory->title == $maincategory->type)

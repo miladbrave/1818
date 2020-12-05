@@ -2,18 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4108efb-c790-428d-82fa-2870f5b18bed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/back/product/seller.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/back/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/back/adminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/back/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/back/productController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/front/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/front/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/css/stylesheet-skin2.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/css/stylesheet-skin2.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/front/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/css/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/product/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/contact.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/img/rio1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/img/rio1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/img/v2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/js/jquery.dcjqaccordion.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/js/jquery.dcjqaccordion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/layout/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/layout/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -181,7 +188,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shop/routes/web.php" />
+    <property name="last_opened_file_path" value="F:/Video/them/admin/data-tables.html" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -347,6 +354,11 @@
       <workItem from="1606932341294" duration="5889000" />
       <workItem from="1606984881290" duration="2196000" />
       <workItem from="1607002015582" duration="400000" />
+      <workItem from="1607002447276" duration="7826000" />
+      <workItem from="1607016058541" duration="4120000" />
+      <workItem from="1607023749995" duration="12014000" />
+      <workItem from="1607087109324" duration="8521000" />
+      <workItem from="1607156307502" duration="1974000" />
     </task>
     <servers />
   </component>

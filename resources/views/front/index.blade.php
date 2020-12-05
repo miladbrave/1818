@@ -119,10 +119,19 @@
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',1) as $product)
                                 <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                src="{{asset(asset($product->photos()->first()->path))}}"
-                                                alt="{{$product->name}}" title="{{$product->name}}"
-                                                class="img-responsive"/></a></div>
+                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                            @if(isset($product->photos()->first()->path))
+                                                <img
+                                                    src="{{asset($product->photos()->first()->path)}}"
+                                                    alt="{{$product->name}}" title="{{$product->name}}"
+                                                    class="img-responsive"/>
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive"/>
+                                            @endif
+                                        </a></div>
                                     <div class="caption main">
                                         <h3>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
@@ -169,10 +178,19 @@
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',2) as $product)
                                 <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                src="{{asset(asset($product->photos()->first()->path))}}"
-                                                alt="{{$product->name}}" title="{{$product->name}}"
-                                                class="img-responsive"/></a></div>
+                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                            @if(isset($product->photos()->first()->path))
+                                                <img
+                                                    src="{{asset($product->photos()->first()->path)}}"
+                                                    alt="{{$product->name}}" title="{{$product->name}}"
+                                                    class="img-responsive"/>
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive"/>
+                                            @endif
+                                        </a></div>
                                     <div class="caption main">
                                         <h3>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
@@ -215,10 +233,19 @@
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',10) as $product)
                                 <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                src="{{asset(asset($product->photos()->first()->path))}}"
-                                                alt="{{$product->name}}" title="{{$product->name}}"
-                                                class="img-responsive"/></a></div>
+                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                            @if(isset($product->photos()->first()->path))
+                                                <img
+                                                    src="{{asset($product->photos()->first()->path)}}"
+                                                    alt="{{$product->name}}" title="{{$product->name}}"
+                                                    class="img-responsive"/>
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive"/>
+                                            @endif
+                                        </a></div>
                                     <div class="caption main">
                                         <h3>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
@@ -261,10 +288,19 @@
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',5) as $product)
                                 <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                src="{{asset(asset($product->photos()->first()->path))}}"
-                                                alt="{{$product->name}}" title="{{$product->name}}"
-                                                class="img-responsive"/></a></div>
+                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                            @if(isset($product->photos()->first()->path))
+                                                <img
+                                                    src="{{asset($product->photos()->first()->path)}}"
+                                                    alt="{{$product->name}}" title="{{$product->name}}"
+                                                    class="img-responsive"/>
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive"/>
+                                            @endif
+                                        </a></div>
                                     <div class="caption main">
                                         <h3>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
@@ -307,10 +343,19 @@
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',8) as $product)
                                 <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                src="{{asset(asset($product->photos()->first()->path))}}"
-                                                alt="{{$product->name}}" title="{{$product->name}}"
-                                                class="img-responsive"/></a></div>
+                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                            @if(isset($product->photos()->first()->path))
+                                                <img
+                                                    src="{{asset($product->photos()->first()->path)}}"
+                                                    alt="{{$product->name}}" title="{{$product->name}}"
+                                                    class="img-responsive"/>
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive"/>
+                                            @endif
+                                        </a></div>
                                     <div class="caption main">
                                         <h3>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
@@ -353,10 +398,19 @@
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',3) as $product)
                                 <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                src="{{asset(asset($product->photos()->first()->path))}}"
-                                                alt="{{$product->name}}" title="{{$product->name}}"
-                                                class="img-responsive"/></a></div>
+                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                            @if(isset($product->photos()->first()->path))
+                                                <img
+                                                    src="{{asset($product->photos()->first()->path)}}"
+                                                    alt="{{$product->name}}" title="{{$product->name}}"
+                                                    class="img-responsive"/>
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive"/>
+                                            @endif
+                                        </a></div>
                                     <div class="caption main">
                                         <h3>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
@@ -399,10 +453,19 @@
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',7) as $product)
                                 <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                src="{{asset(asset($product->photos()->first()->path))}}"
-                                                alt="{{$product->name}}" title="{{$product->name}}"
-                                                class="img-responsive"/></a></div>
+                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                            @if(isset($product->photos()->first()->path))
+                                                <img
+                                                    src="{{asset($product->photos()->first()->path)}}"
+                                                    alt="{{$product->name}}" title="{{$product->name}}"
+                                                    class="img-responsive"/>
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive"/>
+                                            @endif
+                                        </a></div>
                                     <div class="caption main">
                                         <h3>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
@@ -445,10 +508,19 @@
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',4) as $product)
                                 <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                src="{{asset(asset($product->photos()->first()->path))}}"
-                                                alt="{{$product->name}}" title="{{$product->name}}"
-                                                class="img-responsive"/></a></div>
+                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                            @if(isset($product->photos()->first()->path))
+                                                <img
+                                                    src="{{asset($product->photos()->first()->path)}}"
+                                                    alt="{{$product->name}}" title="{{$product->name}}"
+                                                    class="img-responsive"/>
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive"/>
+                                            @endif
+                                        </a></div>
                                     <div class="caption main">
                                         <h3>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
@@ -491,10 +563,19 @@
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',6) as $product)
                                 <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                src="{{asset(asset($product->photos()->first()->path))}}"
-                                                alt="{{$product->name}}" title="{{$product->name}}"
-                                                class="img-responsive"/></a></div>
+                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                            @if(isset($product->photos()->first()->path))
+                                                <img
+                                                    src="{{asset($product->photos()->first()->path)}}"
+                                                    alt="{{$product->name}}" title="{{$product->name}}"
+                                                    class="img-responsive"/>
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive"/>
+                                            @endif
+                                        </a></div>
                                     <div class="caption main">
                                         <h3>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
@@ -537,10 +618,19 @@
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',9) as $product)
                                 <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                src="{{asset(asset($product->photos()->first()->path))}}"
-                                                alt="{{$product->name}}" title="{{$product->name}}"
-                                                class="img-responsive"/></a></div>
+                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                            @if(isset($product->photos()->first()->path))
+                                                <img
+                                                    src="{{asset($product->photos()->first()->path)}}"
+                                                    alt="{{$product->name}}" title="{{$product->name}}"
+                                                    class="img-responsive"/>
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive"/>
+                                            @endif
+                                        </a></div>
                                     <div class="caption main">
                                         <h3>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
