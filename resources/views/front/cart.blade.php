@@ -28,7 +28,7 @@
                                 @foreach($cart->items as $product)
                                     <tr>
                                         <td class="text-center" style="width: 20%;">
-                                            @if(isset($product['item']->slug))
+                                            @if(isset($product['item']->photos()->first()->path))
                                                 <a href="{{route('product.self',['slug' => $product['item']->slug])}}">
                                                     <img
                                                         src="{{asset($product['item']->photos()->first()->path)}}"
@@ -37,12 +37,11 @@
                                                         class="img-thumbnail"/>
                                                 </a>
                                             @else
-                                                <a href="{{route('downloads')}}">
+                                                <a href="{{route('product.self',['slug' => $product['item']->slug])}}">
                                                     <img
-                                                        src="{{asset('/front/img/download.png')}}" width="50%"
-                                                        alt="{{$product['item']->name}}"
-                                                        title="{{$product['item']->name}}"
-                                                        class="img-thumbnail"/>
+                                                        src="{{asset('/front/img/1.jpg')}}"
+                                                        alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                        class="img-responsive"/>
                                                 </a>
                                             @endif
                                         </td>
@@ -149,7 +148,7 @@
                         </div>
                     </div>
                     <div class="buttons">
-{{--                        <div class="pull-left"><a href="{{route('home')}}" class="btn btn-default">ادامه خرید</a></div>--}}
+                        {{--                        <div class="pull-left"><a href="{{route('home')}}" class="btn btn-default">ادامه خرید</a></div>--}}
                         <div class="pull-right"><a href="{{route('checkout')}}" class="btn btn-primary">تسویه حساب</a>
                         </div>
                     </div>

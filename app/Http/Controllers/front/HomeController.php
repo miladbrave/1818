@@ -85,7 +85,7 @@ class HomeController extends Controller
         }
         $rand = Product::with('categories')->whereHas('categories', function ($q) use ($id) {
             $q->where('type', $id);
-        })->get();
+        })->take(2)->get();
 
         return view('front.category', compact('navcategories', 'maincategories', 'subcategories', 'products', 'title','rand'));
     }
@@ -177,6 +177,7 @@ class HomeController extends Controller
 
     public function updateuser(Request $request)
     {
+
         $user = User::find(auth()->user()->id);
         $user->fname = $request->fname;
         $user->lname = $request->lname;
@@ -192,6 +193,7 @@ class HomeController extends Controller
         $userlist->factor = $this->factor();
         $userlist->totalprice = Session::get('cart')->totalPrice;
         $userlist->receiveprice = $request->send;
+        $userlist->comment = $request->comments;
         $userlist->save();
 
         foreach (Session::get('cart')->items as $person) {

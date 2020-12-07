@@ -46,11 +46,19 @@
                     <td style=" border: 1px solid black;text-align: center;width: 30%">
                         <span style="color: red">{{$p->price}} تومان</span>
                     </td>
-                    <td style=" border: 1px solid black;text-align: center;width: 20%">{{$pur->count}}تعداد </td>
+                    <td style=" border: 1px solid black;text-align: center;width: 20%">{{$pur->count}}تعداد</td>
                     <td style=" border: 1px solid black;text-align: center;width: 20%"> {{$p->name}}</td>
-                    <td style=" border: 1px solid black;text-align: right;width: 30%"><img
-                            src="{{asset($p->photos->first()->path)}}" alt="" width="60%"
-                            height="100px"></td>
+                    <td style=" border: 1px solid black;text-align: right;width: 30%">
+                        @if(isset($p->photos->first()->path))
+                            <img
+                                src="{{asset($p->photos->first()->path)}}" alt="" width="60%"
+                                height="100px"></td>
+                    @else
+                        <img
+                            src="{{asset('/front/img/1.jpg')}}"
+                            alt="آذر یدک ریو" title="آذر یدک ریو"
+                            class="img-responsive"/>
+                    @endif
                 </tr>
             @endforeach
         @endforeach

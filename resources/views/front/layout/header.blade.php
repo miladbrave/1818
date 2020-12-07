@@ -92,18 +92,17 @@
                                             <tr>
                                                 <td class="text-left" style="width: 30%;">
                                                     <a href="#">
-                                                        @if(isset($product['item']->photos))
+                                                        @if(isset($product['item']->photos->first()->path))
                                                             <img class="img-thumbnail"
                                                                  title="{{$product['item']->name}}"
                                                                  alt="{{$product['item']->name}}"
                                                                  src="{{asset($product['item']->photos()->first()->path)}}"
                                                             >
                                                         @else
-                                                            <img class="img-thumbnail"
-                                                                 title="{{$product['item']->name}}"
-                                                                 alt="{{$product['item']->name}}"
-                                                                 src="{{asset('/front/img/download.png')}}"
-                                                            >
+                                                            <img
+                                                                src="{{asset('/front/img/1.jpg')}}"
+                                                                alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                                class="img-responsive"/>
                                                         @endif
                                                     </a>
                                                 </td>

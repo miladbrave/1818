@@ -30,18 +30,18 @@
                                             <div class="panel-body">
                                                 <p>لطفا یک شیوه حمل و نقل انتخاب کنید:</p>
                                                 <div class="row">
-{{--                                                    <div class="col-md-12">--}}
-{{--                                                        <label>--}}
-{{--                                                            <input type="radio" name="send" v-model="selected"--}}
-{{--                                                                   value="14000">--}}
-{{--                                                            پست سفارشی</label>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="col-md-12">--}}
-{{--                                                        <label>--}}
-{{--                                                            <input type="radio" name="send" v-model="selected"--}}
-{{--                                                                   value="20000">--}}
-{{--                                                            پست پیشتاز</label>--}}
-{{--                                                    </div>--}}
+                                                    {{--                                                    <div class="col-md-12">--}}
+                                                    {{--                                                        <label>--}}
+                                                    {{--                                                            <input type="radio" name="send" v-model="selected"--}}
+                                                    {{--                                                                   value="14000">--}}
+                                                    {{--                                                            پست سفارشی</label>--}}
+                                                    {{--                                                    </div>--}}
+                                                    {{--                                                    <div class="col-md-12">--}}
+                                                    {{--                                                        <label>--}}
+                                                    {{--                                                            <input type="radio" name="send" v-model="selected"--}}
+                                                    {{--                                                                   value="20000">--}}
+                                                    {{--                                                            پست پیشتاز</label>--}}
+                                                    {{--                                                    </div>--}}
                                                     <div class="col-md-12">
                                                         <label>
                                                             <input type="radio" name="send" v-model="selected"
@@ -188,7 +188,7 @@
                                                             @foreach($cart->items as $product)
                                                                 <tr>
                                                                     <td class="text-center" width="15%">
-                                                                        @if(isset($product['item']->slug))
+                                                                        @if(isset($product['item']->photos()->first()->path))
                                                                             <a
                                                                                 href="{{route('product.self',['slug' => $product['item']->slug])}}"><img
                                                                                     src="{{asset($product['item']->photos()->first()->path)}}"
@@ -197,14 +197,12 @@
                                                                                     class="img-thumbnail"/>
                                                                             </a>
                                                                         @else
-                                                                            <a
-                                                                                href="{{route('downloads')}}"><img
-                                                                                    src="{{asset('/front/img/download.png')}}"
-                                                                                    alt="{{$product['item']->name}}"
-                                                                                    title="{{$product['item']->name}}"
-                                                                                    class="img-thumbnail"/>
-                                                                            </a>
+                                                                            <img
+                                                                                src="{{asset('/front/img/1.jpg')}}"
+                                                                                alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                                                class="img-responsive"/>
                                                                         @endif
+
                                                                     </td>
                                                                     <td class="text-left">
                                                                         @if(isset($product['item']->slug))

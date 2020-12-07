@@ -33,7 +33,11 @@ class productController extends Controller
         $newproduct->slug = $this->make_slug($request->faname);
         $newproduct->sku = $this->generatesku();
         $newproduct->price = $request->price;
-        $newproduct->discount = $request->discount;
+        if (isset($request->discount))
+            $newproduct->discount = $request->discount;
+        else {
+            $newproduct->discount = 0;
+        }
         $newproduct->brand_id = $request->brand;
         $newproduct->type = $request->type;
         $newproduct->distribute = $request->distribute;
@@ -49,8 +53,10 @@ class productController extends Controller
         $photos = explode(',', $request->input('photo_id')[0]);
         foreach ($photos as $photo) {
             $test = Photo::find($photo);
-            $test->product_id = $newproduct->id;
-            $test->save();
+            if (isset($test)) {
+                $test->product_id = $newproduct->id;
+                $test->save();
+            }
         }
         $newproduct->attributevalus()->sync($request->get('attributes'));
 
@@ -77,7 +83,11 @@ class productController extends Controller
         $product->slug = $this->make_slug($request->faname);
         $product->sku = $this->generatesku();
         $product->price = $request->price;
-        $product->discount = $request->discount;
+        if (isset($request->discount))
+            $product->discount = $request->discount;
+        else {
+            $product->discount = 0;
+        }
         $product->brand_id = $request->brand;
         $product->type = $request->type;
         $product->distribute = $request->distribute;
@@ -91,13 +101,15 @@ class productController extends Controller
             $product->categories()->sync($request->get('maincategory'));
         else
             foreach ($product->categories as $pro)
-            $product->categories()->sync($pro->id);
+                $product->categories()->sync($pro->id);
 
         $photos = explode(',', $request->input('photo_id')[0]);
         foreach ($photos as $photo) {
             $test = Photo::find($photo);
-            $test->product_id = $product->id;
-            $test->save();
+            if (isset($test)) {
+                $test->product_id = $product->id;
+                $test->save();
+            }
         }
         $product->attributevalus()->sync($request->get('attributes'));
 
@@ -106,7 +118,7 @@ class productController extends Controller
 
     public function destroy(Product $product)
     {
-        $photos = Photo::where('product_id',$product->id)->get();
+        $photos = Photo::where('product_id', $product->id)->get();
         if ($photos) {
             foreach ($photos as $photo) {
                 unlink(getcwd() . $photo->path);
@@ -173,12 +185,12 @@ class productController extends Controller
     {
         $products = Product::all();
         $response = ['products' => $products];
-        return response()->json( $response , 200);
+        return response()->json($response, 200);
     }
 
-    public function celler()
-    {
-        $products = Product::orderBy('count', 'ASC')->paginate(20);
-        return view('back.product.seller',compact('products'));
-    }
+//    public function celler()
+//    {
+//        $products = Product::orderBy('count', 'ASC')->paginate(20);
+//        return view('back.product.seller',compact('products'));
+//    }
 }

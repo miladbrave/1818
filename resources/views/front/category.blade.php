@@ -9,13 +9,17 @@
                     <div class="box-category">
                         <ul id="cat_accordion">
                             @foreach($navcategories as $nav)
-                                <li><a href="{{route('category',['id'=>$nav->title])}}">{{$nav->title}}</a> <span
-                                        class="down"></span>
+                                <li>
+                                    <a href="{{route('category',['id'=>$nav->title])}}" class="main">{{$nav->title}}</a>
+                                    <span
+                                        class="down">
+                                    </span>
                                     <ul style="display:block;">
                                         @foreach($maincategories as $main)
                                             @if($nav->title == $main->type)
                                                 <li>
-                                                    <a href="{{route('category',['id'=>$main->title])}}" class="text-danger">{{$main->title}}</a>
+                                                    <a href="{{route('category',['id'=>$main->title])}}"
+                                                       style="color: red">{{$main->title}}</a>
                                                     <span class="down"></span>
                                                     <ul>
                                                         @foreach($subcategories as $sub)
@@ -95,10 +99,19 @@
                             @foreach($products as $product)
                                 <div class="product-layout product-list col-xs-12">
                                     <div class="product-thumb">
-                                        <div class="image"><a href="{{route('product.self',$product->slug)}}"><img
-                                                    src="{{asset($product->photos()->first()->path)}}"
-                                                    alt="{{$product->name}}" title="{{$product->name}}"
-                                                    class="img-responsive"/></a></div>
+                                        <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                                @if(isset($product->photos()->first()->path))
+                                                    <img
+                                                        src="{{asset($product->photos()->first()->path)}}"
+                                                        alt="{{$product->name}}" title="{{$product->name}}"
+                                                        class="img-responsive"/>
+                                                @else
+                                                    <img
+                                                        src="{{asset('/front/img/1.jpg')}}"
+                                                        alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                        class="img-responsive"/>
+                                                @endif
+                                            </a></div>
                                         <div class="caption main">
                                             <h3>
                                                 <a href="{{route('product.self',$product->slug)}}"> {{$product->name}} </a>
@@ -148,13 +161,22 @@
                             @endforeach
                         @endif
                         @if(!isset($product) && $rand->isNotEmpty())
-                            @foreach($rand->random(1) as $ran)
+                            @foreach($rand as $ran)
                                 <div class="product-layout product-list col-xs-12">
                                     <div class="product-thumb">
-                                        <div class="image"><a href="{{route('product.self',$ran->slug)}}"><img
-                                                    src="{{asset($ran->photos()->first()->path)}}"
-                                                    alt="{{$ran->name}}" title="{{$ran->name}}"
-                                                    class="img-responsive"/></a></div>
+                                        <div class="image"><a href="{{route('product.self',$ran->slug)}}">
+                                                @if(isset($ran->photos()->first()->path))
+                                                    <img
+                                                        src="{{asset($ran->photos()->first()->path)}}"
+                                                        alt="{{$ran->name}}" title="{{$ran->name}}"
+                                                        class="img-responsive"/>
+                                                @else
+                                                    <img
+                                                        src="{{asset('/front/img/1.jpg')}}"
+                                                        alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                        class="img-responsive"/>
+                                                @endif
+                                            </a></div>
                                         <div class="caption main">
                                             <h3>
                                                 <a href="{{route('product.self',$ran->slug)}}"> {{$ran->name}} </a>
@@ -212,4 +234,19 @@
         </div>
     </div>
 
+@endsection
+@section('js3')
+    <script>
+        let title = $('.title').text();
+        var t = [];
+        var elements = document.body.getElementsByClassName("main");
+        for (i = 0; i < elements.length; i++) {
+            t.push(elements[i].innerText);
+            if (elements[i].innerText == title) {
+                var active = $(elements[i]).addClass("active");
+                var child = $(elements[i]).parents('.cutom-parent-li').children().eq(2)
+                var m = child.css("display", "block");
+            }
+        }
+    </script>
 @endsection

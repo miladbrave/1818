@@ -346,12 +346,22 @@
                                         @foreach($purch->where('factor_number',$userlist->id) as $pur)
                                             @foreach($purchl->where('id',$pur->product_id) as $p)
                                                 <div class="col-md-3 pull-right">
-                                                    <img src="{{asset($p->photos->first()->path)}}" alt="" width="100%"
-                                                         height="100px">
+                                                    @if(isset($p->photos()->first()->path))
+                                                        <img src="{{asset($p->photos->first()->path)}}" alt="" width="100%"
+                                                             height="100px">
+                                                    @else
+                                                        <img
+                                                            src="{{asset('/front/img/1.jpg')}}"
+                                                            alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                            class="img-responsive"/>
+                                                    @endif
                                                     {{$p->name}}<br>
                                                     <span class="text-danger">{{$p->price}} تومان</span><br>
                                                     تعداد : {{$pur->count}}
                                                 </div>
+                                                @if(isset($userlist->comment))
+                                                    <span class="text-danger">{{$userlist->comment}}</span>
+                                                @endif
                                             @endforeach
                                         @endforeach
                                     @endforeach

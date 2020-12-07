@@ -59,6 +59,7 @@
 <script type="text/javascript" src="{{asset('/front/js/swipebox/src/js/jquery.swipebox.min.js')}}"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
+@yield('js3')
 
 <script type="text/javascript">
     $("#zoom_01").elevateZoom({

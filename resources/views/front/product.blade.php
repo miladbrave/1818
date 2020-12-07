@@ -15,21 +15,31 @@
                         <div class="row product-info">
                             <div class="col-sm-5">
                                 <div class="image">
-                                    <img class="img-responsive" itemprop="image" id="zoom_01"
-                                         src="{{asset($product->photos()->first()->path)}}" title="{{$product->name}}"
-                                         alt="{{$product->name}}"
-                                         data-zoom-image="{{asset($product->photos()->first()->path)}}"/>
+                                    @if(isset($product->photos()->first()->path))
+                                        <img class="img-responsive" itemprop="image" id="zoom_01"
+                                             src="{{asset($product->photos()->first()->path)}}"
+                                             title="{{$product->name}}"
+                                             alt="{{$product->name}}"
+                                             data-zoom-image="{{asset($product->photos()->first()->path)}}"/>
+                                    @else
+                                        <img
+                                            src="{{asset('/front/img/1.jpg')}}"
+                                            alt="آذر یدک ریو" title="آذر یدک ریو"
+                                            class="img-responsive"/>
+                                    @endif
                                 </div>
                                 <div class="center-block text-center"><span class="zoom-gallery"><i
                                             class="fa fa-search"></i> برای مشاهده گالری روی تصویر کلیک کنید</span></div>
                                 <div class="image-additional" id="gallery_01">
-                                    @foreach($product->photos as $photo)
-                                        <a class="thumbnail" href="#"
-                                           data-zoom-image="{{asset($photo->path)}}"
-                                           data-image="{{asset($photo->path)}}" title="{{$product->name}}">
-                                            <img src="{{($photo->path)}}" style="height: 80px"
-                                                 title="{{$product->name}}" alt="{{$product->name}}"/></a>
-                                    @endforeach
+                                    @if(isset($product->photos()->first()->path))
+                                        @foreach($product->photos as $photo)
+                                            <a class="thumbnail" href="#"
+                                               data-zoom-image="{{asset($photo->path)}}"
+                                               data-image="{{asset($photo->path)}}" title="{{$product->name}}">
+                                                <img src="{{($photo->path)}}" style="height: 80px"
+                                                     title="{{$product->name}}" alt="{{$product->name}}"/></a>
+                                        @endforeach
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-sm-5">
@@ -62,27 +72,27 @@
                                     <ul class="price-box">
                                         <li class="price" itemprop="offers" itemscope
                                             itemtype="http://schema.org/Offer">
-                                        <span itemprop="price" style="font-size: 40px">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال <span
+                                        <span itemprop="price" style="font-size: 40px">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال <span
                                                 itemprop="availability" content="موجود"></span></span></li>
                                         @if($product->disprice)
                                             <span class="price-old"
                                                   style="font-size: 20px!important;">{{$product->disprice}} ریال </span>
                                         @endif
                                     </ul>
-                                        <div id="product ">
-                                            <div class="cart">
-                                                @if($product->count > 0)
+                                    <div id="product ">
+                                        <div class="cart">
+                                            @if($product->count > 0)
                                                 <div class="btn btn-success pull-left" style="border-radius: 10px">
                                                     <i class="fa fa-cart-plus" style="font-size: 20px"></i>
                                                     <a class="btn-success"
                                                        href="{{route('add.cart',['id'=>$product->id])}}"><span>افزودن به سبد</span>
                                                     </a>
                                                 </div>
-                                                @else
-                                                    <span class="text-danger">اتمام موجودی انبار</span>
-                                                @endif
-                                            </div>
+                                            @else
+                                                <span class="text-danger">اتمام موجودی انبار</span>
+                                            @endif
                                         </div>
+                                    </div>
 
                                 @elseif($product->exist == 2)
                                     <h4 style="padding-bottom: 15%;%;font-weight: bold;color: red">موجود نمی
@@ -146,12 +156,19 @@
                                 <div class="product-thumb clearfix">
                                     <div class="image" style="width: 100%!important;height: auto!important;">
                                         <a href="{{route('product.self',$randomProduct->slug)}}">
-                                            <img src="{{asset($randomProduct->photos()->first()->path)}}"
-                                                 alt="{{$randomProduct->name}}"
-                                                 title="{{$randomProduct->name}}"
-                                                 style="height: 100px!important;"
-                                                 class="img-responsive"
-                                            />
+                                            @if(isset($randomProduct->photos()->first()->path))
+                                                <img src="{{asset($randomProduct->photos()->first()->path)}}"
+                                                     alt="{{$randomProduct->name}}"
+                                                     title="{{$randomProduct->name}}"
+                                                     style="height: 100px!important;"
+                                                     class="img-responsive"
+                                                />
+                                            @else
+                                                <img
+                                                    src="{{asset('/front/img/1.jpg')}}"
+                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                    class="img-responsive" style="height: 100px!important;"/>
+                                            @endif
                                         </a>
                                     </div>
                                     <div class="caption">
@@ -171,10 +188,21 @@
                 <div class="owl-carousel related_pro">
                     @foreach($relatedProducts as $relatedProduct)
                         <div class="product-thumb">
-                            <div class="image"><a href="{{route('product.self',$relatedProduct->slug)}}"><img
-                                        src="{{asset($relatedProduct->photos->first()->path)}}"
-                                        alt="{{$relatedProduct->title}}" title="{{$relatedProduct->title}}"
-                                        class="img-responsive"/></a></div>
+                            <div class="image">
+                                <a href="{{route('product.self',$relatedProduct->slug)}}">
+                                    @if(isset($relatedProduct->photos->first()->path))
+                                        <img
+                                            src="{{asset($relatedProduct->photos->first()->path)}}"
+                                            alt="{{$relatedProduct->title}}" title="{{$relatedProduct->title}}"
+                                            class="img-responsive"/>
+                                    @else
+                                        <img
+                                            src="{{asset('/front/img/1.jpg')}}"
+                                            alt="آذر یدک ریو" title="آذر یدک ریو"
+                                            class="img-responsive"/>
+                                    @endif
+                                </a>
+                            </div>
                             <div class="caption">
                                 <h4>
                                     <a href="{{route('product.self',$relatedProduct->slug)}}">{{$relatedProduct->name}}</a>
@@ -190,19 +218,20 @@
                                         </p>
                                     @else
                                         <p class="price">
-                                            <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                            <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
                                         </p>
                                     @endif
                                 @elseif($product->exist == 2)
                                     <h4 style="padding-bottom: 15%;font-weight: bold;color: red">موجود نمی باشد.</h4>
                                 @endif
                             </div>
-                            <div class="btn btn-success pull-left" style="border-radius: 10px">
+{{--                            <div class="btn btn-success pull-left" style="border-radius: 10px">--}}
 
-                                <a class="btn-success"
-                                   href="{{route('add.cart',['id'=>$product->id])}}"><span><i class="fa fa-cart-plus" style="font-size: 20px"></i>افزودن به سبد</span>
-                                </a>
-                            </div>
+{{--                                <a class="btn-success"--}}
+{{--                                   href="{{route('add.cart',['id'=>$product->id])}}"><span><i class="fa fa-cart-plus"--}}
+{{--                                                                                              style="font-size: 20px"></i>افزودن به سبد</span>--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
                         </div>
                     @endforeach
                 </div>

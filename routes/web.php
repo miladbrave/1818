@@ -49,7 +49,7 @@ Route::group(['prefix'=>'administrator','middleware'=>'admin'], function () {
     Route::get('photoDestroy/{id}','back\productController@photoDestroy')->name('photoDestroy');
     Route::post('sendmessagemain','back\dashboardController@sendmain')->name('messages.send.main');
     Route::get('mainmessage','back\dashboardController@mainmessage')->name('mainmessage');
-    Route::get('celler','back\productController@celler')->name('celler');
+//    Route::get('celler','back\productController@celler')->name('celler');
 
 });
 

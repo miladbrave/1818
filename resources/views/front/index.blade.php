@@ -147,7 +147,7 @@
                                                 </p>
                                             @else
                                                 <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
                                                 </p>
                                             @endif
                                         @elseif($product->exist == 2)
@@ -206,7 +206,7 @@
                                                 </p>
                                             @else
                                                 <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
                                                 </p>
                                             @endif
                                         @elseif($product->exist == 2)
@@ -261,7 +261,7 @@
                                                 </p>
                                             @else
                                                 <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
                                                 </p>
                                             @endif
                                         @elseif($product->exist == 2)
@@ -316,7 +316,7 @@
                                                 </p>
                                             @else
                                                 <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
                                                 </p>
                                             @endif
                                         @elseif($product->exist == 2)
@@ -371,7 +371,8 @@
                                                 </p>
                                             @else
                                                 <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
+
                                                 </p>
                                             @endif
                                         @elseif($product->exist == 2)
@@ -426,7 +427,7 @@
                                                 </p>
                                             @else
                                                 <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
                                                 </p>
                                             @endif
                                         @elseif($product->exist == 2)
@@ -481,7 +482,7 @@
                                                 </p>
                                             @else
                                                 <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
                                                 </p>
                                             @endif
                                         @elseif($product->exist == 2)
@@ -536,7 +537,7 @@
                                                 </p>
                                             @else
                                                 <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
                                                 </p>
                                             @endif
                                         @elseif($product->exist == 2)
@@ -591,7 +592,8 @@
                                                 </p>
                                             @else
                                                 <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
+
                                                 </p>
                                             @endif
                                         @elseif($product->exist == 2)
@@ -646,7 +648,7 @@
                                                 </p>
                                             @else
                                                 <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
                                                 </p>
                                             @endif
                                         @elseif($product->exist == 2)

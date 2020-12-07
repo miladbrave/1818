@@ -19,6 +19,7 @@ class AddPurchList extends Migration
             $table->string('product_id',100);
             $table->bigInteger('count')->nullable()->default(1);
             $table->bigInteger('price');
+            $table->text('comment')->nullable();
             $table->foreign('factor_number')->references('id')->on('userlists')
                 ->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();

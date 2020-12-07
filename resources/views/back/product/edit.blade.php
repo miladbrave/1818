@@ -83,7 +83,7 @@
                                                 <label>تخفیف (درصد)</label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-percent"></i></span>
-                                                    <input type="text" class="form-control" name="discount" required
+                                                    <input type="text" class="form-control" name="discount"
                                                            value="{{$product->discount}}">
                                                 </div>
                                             </div>
