@@ -13,7 +13,7 @@
                                 <label for="email" class="col-md-3 col-form-label text-md-left order-md-2" style="float: unset">نام کاربری
                                     :</label>
                                 <div class="col-md-6" style="margin-left: 21% ">
-                                    <input id="email" type="text"
+                                    <input id="email" type="email"
                                            class="form-control @error('email') is-invalid @enderror" name="email"
                                            value="{{ old('email') }}" required autocomplete="email" autofocus>
                                     @error('email')

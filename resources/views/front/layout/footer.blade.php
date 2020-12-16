@@ -29,9 +29,11 @@
                                                         class="fa fa-instagram fa-2x"
                                                         aria-hidden="true"
                                                         style="font-size: 26px"></i></a></li>
-                                            <li class="whatsapp"><a href="https://api.whatsapp.com/send?phone=989149163726"><i class="fa fa-whatsapp fa-2x"
-                                                                                aria-hidden="true"
-                                                                                style="font-size: 26px"></i></a></li>
+                                            <li class="whatsapp"><a
+                                                    href="https://api.whatsapp.com/send?phone=989149163726"><i
+                                                        class="fa fa-whatsapp fa-2x"
+                                                        aria-hidden="true"
+                                                        style="font-size: 26px"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -46,7 +48,14 @@
                     </div>
                 </div>
                 <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
-                    {{--                    <a href="#"><img src="{{asset('/front/img/1.png')}}" alt="" style="width: 100%"></a>--}}
+                    <a referrerpolicy="origin" target="_blank"
+                       href="https://trustseal.enamad.ir/?id=192622&amp;Code=wjlEWYXypIDaF3wgYkSw">
+                        <img src="{{asset('/front/img/star1.png')}}">
+                        <img
+                            referrerpolicy="origin"
+                            src="{{asset('/front/img/star1.png')}}" alt=""
+                            style="cursor:pointer" id="wjlEWYXypIDaF3wgYkSw">
+                    </a>
                 </div>
             </div>
             <div class="custom-text text-center">

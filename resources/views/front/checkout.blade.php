@@ -238,7 +238,7 @@
                                                             <td class="text-right" colspan="4"><strong> کل:</strong>
                                                             </td>
                                                             <td class="text-right">{{Session::get('cart')->totalPrice}}
-                                                                تومان
+                                                                ریال
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -249,7 +249,7 @@
                                                         <tr>
                                                             <td class="text-right" colspan="4"><strong>جمع کل :</strong>
                                                             </td>
-                                                            <td class="text-right" v-html="paytotal"></td>
+                                                            <td class="text-right" v-html="paytotal + 'ریال'"> </td>
                                                         </tr>
                                                         </tfoot>
                                                     </table>

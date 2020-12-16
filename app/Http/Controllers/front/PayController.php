@@ -22,6 +22,7 @@ class PayController extends Controller
     {
         $mount = Userlist::where('user_id', auth()->user()->id)->latest('created_at')->first();
         $total = $mount->totalprice + $mount->receiveprice;
+        $total = ($total/10);
         $invoice = (new Invoice)->amount((int)$total);
         $payment = Payment::callbackUrl(route('paypack_callback'))->purchase($invoice);
         $pay = new Pay();
@@ -42,16 +43,14 @@ class PayController extends Controller
     public function paypack_callback(Request $request)  //موفق یا ناموفق
     {
         try {
-            $pay = Pay::where('transaction_id', $request->trackId)->latest()->first();
-//            $pay = Pay::where('transaction_id', $request->Authority)->latest()->first();
-            if ($pay) {
+            $pay = Pay::where('transaction_id', ltrim($request->Authority, '0'))->latest()->first();
+            if (isset($pay)) {
                 $price = (int)$pay->price;
-//                $transaction_id = str_pad($pay->transaction_id, 36, 0, STR_PAD_LEFT);
                 $payment = Payment::amount($price)->transactionId($pay->transaction_id)->verify();
-                if ($request->success == 1) {
+                if ($request->success == "OK") {
                     $pay->status = 'success';
                     $pay->payment_date = Carbon::now();
-                    $pay->order_id = $request->orderId;
+                    $pay->order_id = $payment->getReferenceId();
                     $pay->save();
                 }
             }
@@ -85,8 +84,8 @@ class PayController extends Controller
                 Session::forget('cart');
                 $userlist->status = "success";
                 $userlist->save();
+                HomeController::sendmail(auth()->user()->id);
             }
-            HomeController::sendmail(auth()->user()->id);
         }
         if (!Auth::check()){
             $pays = Pay::where('user_id', 1000000)->orderBy('created_at', 'DESC')->first();

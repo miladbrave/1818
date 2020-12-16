@@ -2,25 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4108efb-c790-428d-82fa-2870f5b18bed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/front/img/star1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/back/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/back/productController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/front/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/front/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_25_160521_add_purch_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_25_160521_add_purch_list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back/factors/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/factors/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/layout/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/product/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/cart.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/back/categoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/back/categoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/back/dashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/back/dashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/front/PayController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/front/PayController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front/css/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front/img/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/layout/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/front/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/layout/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/layout/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/mail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/mail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -368,6 +361,17 @@
       <workItem from="1607350376190" duration="25000" />
       <workItem from="1607351382433" duration="1889000" />
       <workItem from="1607363798183" duration="8707000" />
+      <workItem from="1607413069316" duration="607000" />
+      <workItem from="1607529746174" duration="874000" />
+      <workItem from="1607582823726" duration="90000" />
+      <workItem from="1607582966922" duration="56000" />
+      <workItem from="1607583228154" duration="4971000" />
+      <workItem from="1607689909727" duration="3874000" />
+      <workItem from="1607697054806" duration="265000" />
+      <workItem from="1607700221397" duration="182000" />
+      <workItem from="1607787601697" duration="1343000" />
+      <workItem from="1607790717406" duration="517000" />
+      <workItem from="1608018383157" duration="1690000" />
     </task>
     <servers />
   </component>

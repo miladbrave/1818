@@ -3,8 +3,6 @@
         <nav id="top" class="htop" style="background-color: rgba(0,0,0,0.4)">
             <div class="container">
                 <div class="row" style="padding-top: 1%">
-                    {{--                    <span class="drop-icon visible-sm visible-xs"><i--}}
-                    {{--                            class="fa fa-align-justify"></i></span>--}}
                     <div class="pull-left flip left-top">
                         <div class="links">
                             <ul>
@@ -187,7 +185,7 @@
                                    placeholder="جستجو"
                                    @keyup="change()"
                                    class="form-control input-lg search"/>
-                            <ul class="search" style="margin-top: 10%">
+                            <ul class="search" style="margin-top: 19%;overflow: hidden">
                                 <li v-if="flag" v-for="pro in filteredpeoples"
                                     class="list-group-item"><a :href="/product/ + pro.slug" v-html="pro.name"></a>
                                 </li>

@@ -6,6 +6,7 @@ use App\Attribute;
 use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class categoryController extends Controller
 {
@@ -89,13 +90,12 @@ class categoryController extends Controller
         $category->save();
 
         if ($category->type == 'null')
-            return redirect()->route('category.show','nav');
-
+            return redirect()->route('category.show', 'nav');
         if ($category->type !== 'null' && is_numeric($category->type))
-            return redirect()->route('category.show','sub');
-
+            return redirect()->route('category.show', 'sub');
         if ($category->type !== 'null' && is_string($category->type))
-            return redirect()->route('category.show','main');
+            return redirect()->route('category.show', 'main');
+
     }
 
 

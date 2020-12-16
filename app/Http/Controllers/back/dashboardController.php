@@ -22,8 +22,11 @@ class dashboardController extends Controller
         }
         if (!isset($purchlist)) {
             $purchlist = null;
+            $count =0;
         }
-        $count= array_sum($purchlist);
+        if (isset($purchlist)) {
+            $count= array_sum($purchlist);
+        }
 
         return view('back.index',compact('users','totalrecive','admin','count'));
     }
