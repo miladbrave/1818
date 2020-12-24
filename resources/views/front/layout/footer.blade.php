@@ -47,15 +47,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="column col-lg-2 col-md-2 col-sm-3 col-xs-12">
+                <div class="col-lg-1 col-md-1 col-sm-6 col-xs-6 zarin">
+                    <script src="https://www.zarinpal.com/webservice/TrustCode" type="text/javascript"></script>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-6 col-xs-6">
                     <a referrerpolicy="origin" target="_blank"
                        href="https://trustseal.enamad.ir/?id=192622&amp;Code=wjlEWYXypIDaF3wgYkSw">
-                        <img src="{{asset('/front/img/star1.png')}}">
-                        <img
-                            referrerpolicy="origin"
-                            src="{{asset('/front/img/star1.png')}}" alt=""
-                            style="cursor:pointer" id="wjlEWYXypIDaF3wgYkSw">
-                    </a>
+                        <img referrerpolicy="origin"
+                             src="{{asset('/front/img/star1.png')}}" alt=""
+                             style="cursor:pointer" id="wjlEWYXypIDaF3wgYkSw"></a>
                 </div>
             </div>
             <div class="custom-text text-center">

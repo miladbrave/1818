@@ -73,8 +73,7 @@
                                                                class="btn btn-danger"
                                                                href="{{route('remove.product',['id'=>$product['item']])}}"><i
                                                                     class="fa fa-times-circle">
-                                                                </i>
-                                                                  </a>
+                                                                </i> حذف </a>
                                                         @else
                                                             <a type="button" data-toggle="tooltip" title="حذف محصول"
                                                                class="btn btn-danger"

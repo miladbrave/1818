@@ -2197,7 +2197,7 @@ div.required .control-label:before {
 }
 
 #subscribe {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/banner.jpg") fixed center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/sub.jpg") fixed center center;
     background-size: cover;padding:50px 0;margin-bottom: 5%;font-family: 'IRANSansWeb', sans-serif}
 #subscribe h3{color: white;text-align: center}
 #subscribe .subscribe-btn {
@@ -2629,7 +2629,8 @@ div.required .control-label:before {
     .logo-text{text-align: center}
     #header #cart{margin-right: 27%!important;}
     .wrapper1{left:83%!important;}
-
+    .zarin{width: 25%!important;margin-right: 23%}
+    .cate .badge{background-color: #f90523!important;padding: 5px;font-size: 12px;font-family: 'IRANSansWeb', sans-serif;margin-right: 2%;margin-top: 2%}
 }
 @media screen and (min-width: 1000px){
     #subset .col-md-12{width: 100%!important;}
@@ -2656,6 +2657,8 @@ div.required .control-label:before {
     #header #search input{width: 31%;height: 25px}
     #header #search{margin-top: 8px!important;}
     #logo img{float: right;width: 40%;margin-top: -1%!important;}
+    .cate .badge{background-color: #f90523!important;padding: 5px;font-size: 12px;font-family: 'IRANSansWeb', sans-serif;margin-right: 2%;margin-top: 2%}
+
 }
 
 @media screen and (min-width: 995px) and (max-width: 1199px){
@@ -2679,3 +2682,4 @@ div.required .control-label:before {
     #header #search{margin-top: 7%!important;}
     #logo img{float: right;width: 55%;margin-top: -1%!important;max-width: 60%!important;}
 }
+.cate .badge{background-color: #f90523!important;padding: 5px;font-size: 12px;font-family: 'IRANSansWeb', sans-serif;margin-right: 2%;margin-top: 1%}

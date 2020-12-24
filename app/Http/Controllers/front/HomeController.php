@@ -63,21 +63,21 @@ class HomeController extends Controller
         $subcategories = Category::whereRaw("type REGEXP '^[0-9]'")->get();
         $categories = Category::with('products')->find($categoryId)->products->pluck('id')->toArray();
         $title = Category::find($categoryId);
-        if ($sort == 2) {
-            $products = Product::with('photos', 'categories')->whereIn('id', $categories)
-                ->orderBy('price', 'asc')
-                ->get();
-        }
-        if ($sort == 1) {
-            $products = Product::with('photos', 'categories')->whereIn('id', $categories)
-                ->orderBy('price', 'desc')
-                ->get();
-        }
-        if ($sort == 3) {
-            $products = Product::with('photos', 'categories')->whereIn('id', $categories)
-                ->orderBy('exist', 'desc')
-                ->get();
-        }
+//        if ($sort == 2) {
+//            $products = Product::with('photos', 'categories')->whereIn('id', $categories)
+//                ->orderBy('price', 'asc')
+//                ->get();
+//        }
+//        if ($sort == 1) {
+//            $products = Product::with('photos', 'categories')->whereIn('id', $categories)
+//                ->orderBy('price', 'desc')
+//                ->get();
+//        }
+//        if ($sort == 3) {
+//            $products = Product::with('photos', 'categories')->whereIn('id', $categories)
+//                ->orderBy('exist', 'desc')
+//                ->get();
+//        }
         if ($sort == 0) {
             $products = Product::with('photos', 'categories')->whereIn('id', $categories)
                 ->orderBy('created_at', 'desc')

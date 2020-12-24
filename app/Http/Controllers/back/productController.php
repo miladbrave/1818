@@ -8,6 +8,7 @@ use App\Photo;
 use App\Product;
 use App\Purchlist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class productController extends Controller
 {
@@ -15,7 +16,7 @@ class productController extends Controller
     public function index()
     {
         $products = Product::orderBy('created_at', 'DESC')
-            ->paginate(10);
+            ->get();
         return view('back.product.index', compact('products'));
     }
 
@@ -73,6 +74,8 @@ class productController extends Controller
         $pro = Product::with('attributevalus', 'categories')->whereId($product->id)->first();
         $photos = Photo::where('product_id', $product->id)->get();
         $brands = Brand::all();
+        Session::forget('lastpage');
+        Session::put('lastpage',url()->previous());
         return view('back.product.edit', compact('product', 'brands', 'photos', 'pro'));
     }
 
@@ -113,7 +116,7 @@ class productController extends Controller
         }
         $product->attributevalus()->sync($request->get('attributes'));
 
-        return redirect()->route('product.index');
+        return redirect(\session('lastpage'));
     }
 
     public function destroy(Product $product)

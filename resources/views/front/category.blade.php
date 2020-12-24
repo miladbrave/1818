@@ -80,15 +80,22 @@
                                             title="Grid"><i class="fa fa-th"></i></button>
                                 </div>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-10 cate">
                                 <div class="text-right">
                                     <label for="exampleFormControlSelect1">دسته بندی :</label>
-                                    <a href="{{route('category',['id'=>$title->title ,'sort' => 1 ])}}" class="badge"
-                                       style="margin-right:5%;background-color: #00d0ff">افزایش قیمت</a>
-                                    <a href="{{route('category',['id'=>$title->title ,'sort' => 2 ])}}" class="badge"
-                                       style="margin-right:4%;background-color: #00d0ff">کاهش قیمت</a>
-                                    <a href="{{route('category',['id'=>$title->title ,'sort' => 3 ])}}" class="badge"
-                                       style="margin-right:4%;background-color: #00d0ff">موجود</a>
+                                    {{--                                    <a href="{{route('category',['id'=>$title->title ,'sort' => 1 ])}}" class="badge"--}}
+                                    {{--                                       style="margin-right:5%;background-color: #00d0ff">افزایش قیمت</a>--}}
+                                    {{--                                    <a href="{{route('category',['id'=>$title->title ,'sort' => 2 ])}}" class="badge"--}}
+                                    {{--                                       style="margin-right:4%;background-color: #00d0ff">کاهش قیمت</a>--}}
+                                    {{--                                    <a href="{{route('category',['id'=>$title->title ,'sort' => 3 ])}}" class="badge"--}}
+                                    {{--                                       style="margin-right:4%;background-color: #00d0ff">موجود</a>--}}
+                                    @foreach($maincategories as $main)
+                                        @if($title->title == $main->type || $title->type == $main->type)
+                                            <li style="display:inline;"><a href="{{route('category',['id'=>$main->title])}}"
+                                                 class="badge badge-success">{{$main->title}}</a>
+                                            </li>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -128,7 +135,7 @@
                                                     </p>
                                                 @else
                                                     <p class="price">
-                                                        <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span>
+                                                        <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
                                                     </p>
                                                 @endif
                                             @elseif($product->exist == 2)
@@ -193,7 +200,7 @@
                                                     </p>
                                                 @else
                                                     <p class="price">
-                                                        <span class="price-new">{{\App\Helpers\Helpers::discount($ran->price,$ran->discount)}} ریال</span>
+                                                        <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($ran->price,$ran->discount))}} ریال</span>
                                                     </p>
                                                 @endif
                                             @elseif($product->exist == 2)

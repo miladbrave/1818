@@ -20,6 +20,8 @@
     <link href="{{asset('back/css/plugins/dropzone/dropzone.css')}}" rel="stylesheet">
     <link href="{{asset('back/css/plugins/select2/select2.css')}}" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+
 
 </head>
 <body>
@@ -48,6 +50,7 @@
 {{--<script src="{{asset('back/js/plugins/flot/excanvas.min.js')}}"></script>--}}
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('back/js/plugins/select2/select2.full.min.js')}}"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 
 
 
@@ -55,6 +58,9 @@
 
 @yield('script')
 <script>
+    $(document).ready( function () {
+        $('#table_id').DataTable();
+    } );
     $(document).ready(function () {
 
         $(".select2").select2();

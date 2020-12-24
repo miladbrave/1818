@@ -21,7 +21,11 @@
                                             <th class="text-center">کاربر</th>
                                             <th class="text-center">شماره فاگتور</th>
                                             <th class="text-center">قیمت</th>
-                                            <th class="text-center">هزینه حمل</th>
+                                            <th class="text-center">شهر</th>
+                                            <th class="text-center">آدرس</th>
+                                            <th class="text-center">کدپستی</th>
+                                            <th class="text-center">تلفن</th>
+{{--                                            <th class="text-center">هزینه حمل</th>--}}
                                             <th class="text-center">وضعیت</th>
                                             <th class="text-center">تاریخ</th>
                                             <th class="text-center">جزئیات</th>
@@ -34,7 +38,11 @@
                                                 <td class="text-center">{{\App\User::where('id',$userlist->user_id)->first()['fname']}} {{\App\User::where('id',$userlist->user_id)->first()['lname']}}</td>
                                                 <td class="text-center">{{$userlist->factor}}</td>
                                                 <td class="text-center">{{$userlist->totalprice}}</td>
-                                                <td class="text-center">{{$userlist->receiveprice}}</td>
+                                                <td class="text-center">{{\App\User::where('id',$userlist->user_id)->first()['city']}}</td>
+                                                <td class="text-center">{{\App\User::where('id',$userlist->user_id)->first()['address']}}</td>
+                                                <td class="text-center">{{\App\User::where('id',$userlist->user_id)->first()['postcode']}}</td>
+                                                <td class="text-center">{{\App\User::where('id',$userlist->user_id)->first()['phone']}}</td>
+{{--                                                <td class="text-center">{{$userlist->receiveprice}}</td>--}}
                                                 <td class="text-center">{{$userlist->status}}</td>
                                                 <td class="text-center">{{Verta::instance($userlist->created_at)->format('%B %d، %Y')}}</td>
                                                 <td class="text-center">

@@ -7,6 +7,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Session;
 
 class categoryController extends Controller
 {
@@ -61,6 +62,8 @@ class categoryController extends Controller
 
     public function edit($id)
     {
+        Session::forget('lastpage');
+        Session::put('lastpage',url()->previous());
         $category = Category::findOrFail($id);
         if ($category->type == 'null') {
             return view('back.category.navcategoryedit', compact('category'));
@@ -89,12 +92,14 @@ class categoryController extends Controller
             $category->type = "null";
         $category->save();
 
-        if ($category->type == 'null')
-            return redirect()->route('category.show', 'nav');
-        if ($category->type !== 'null' && is_numeric($category->type))
-            return redirect()->route('category.show', 'sub');
-        if ($category->type !== 'null' && is_string($category->type))
-            return redirect()->route('category.show', 'main');
+//        if ($category->type == 'null')
+//            return redirect()->route('category.show', 'nav');
+//        if ($category->type !== 'null' && is_numeric($category->type))
+//            return redirect()->route('category.show', 'sub');
+//        if ($category->type !== 'null' && is_string($category->type))
+//            return redirect()->route('category.show', 'main');
+
+        return redirect(session('lastpage'));
 
     }
 

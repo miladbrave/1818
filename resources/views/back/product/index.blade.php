@@ -17,7 +17,7 @@
                             </h1>
                             <div class="panel-body wt-panel-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-border table-hover">
+                                    <table class="table table-striped table-border table-hover" id="table_id">
                                         <thead>
                                         <tr>
                                             <th class="text-center">شماره محصول</th>
@@ -61,9 +61,9 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="container">
-                                    {{ $products->links() }}
-                                </div>
+{{--                                <div class="container">--}}
+{{--                                    {{ $products->links() }}--}}
+{{--                                </div>--}}
                             </div>
                         </div>
                     </div>
@@ -71,4 +71,11 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        } );
+    </script>
 @endsection

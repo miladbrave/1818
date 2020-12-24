@@ -223,11 +223,11 @@
                                                                              style="max-width: 200px;">
                                                                             <span>{{$product['qty']}}</span></div>
                                                                     </td>
-                                                                    <td class="text-center">{{\App\Helpers\Helpers::discount($product['item']->price,$product['item']->discount)}}
-                                                                        تومان
+                                                                    <td class="text-center">{{number_format(\App\Helpers\Helpers::discount($product['item']->price,$product['item']->discount))}}
+                                                                        ریال
                                                                     </td>
-                                                                    <td class="text-center">{{$product['price']}}
-                                                                        تومان
+                                                                    <td class="text-center">{{number_format($product['price'])}}
+                                                                        ریال
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
@@ -237,14 +237,14 @@
                                                         <tr>
                                                             <td class="text-right" colspan="4"><strong> کل:</strong>
                                                             </td>
-                                                            <td class="text-right">{{Session::get('cart')->totalPrice}}
+                                                            <td class="text-right">{{number_format(Session::get('cart')->totalPrice)}}
                                                                 ریال
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td class="text-right" colspan="4"><strong>هزینه ارسال
                                                                     :</strong></td>
-                                                            <td class="text-right" v-html="selected +  'تومان'"></td>
+                                                            <td class="text-right" v-html="selected +  ' ریال '"></td>
                                                         </tr>
                                                         <tr>
                                                             <td class="text-right" colspan="4"><strong>جمع کل :</strong>
