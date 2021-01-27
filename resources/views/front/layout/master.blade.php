@@ -36,7 +36,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('/front/css/responsive-rtl.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/front/css/stylesheet-skin2.css')}}">
 
-
 </head>
 <body>
 <div class="wrapper-wide">
@@ -62,30 +61,44 @@
 @yield('js3')
 
 <script type="text/javascript">
+    $('#zoom_01').click(function(){
+        if(screen.width() < 540){
+            $(this).elevateZoom({
+                zoomWindowPosition:1,
+                zoomWindowOffetx: 5,
+                zoomWindowWidth:$(this).width(),
+                zoomWindowHeight:$(this).height(),
+            });
+        }
+        else{
+            $.removeData($(this), 'elevateZoom');//remove zoom instance from image
+            $('.zoomContainer').remove(); // remove zoom container from DOM
+            return false;
+        }
+    });
     $("#zoom_01").elevateZoom({
-        gallery:'gallery_01',
+        gallery: 'gallery_01',
         cursor: 'pointer',
         galleryActiveClass: 'active',
         imageCrossfade: true,
         zoomWindowFadeIn: 500,
         zoomWindowFadeOut: 500,
-        zoomWindowPosition : 11,
+        zoomWindowPosition: 11,
         lensFadeIn: 500,
         lensFadeOut: 500,
         loadingIcon: 'image/progress.gif'
     });
-    $("#zoom_01").bind("click", function(e) {
-        var ez =   $('#zoom_01').data('elevateZoom');
+    $("#zoom_01").bind("click", function (e) {
+        var ez = $('#zoom_01').data('elevateZoom');
         $.swipebox(ez.getGalleryList());
         return false;
     });
 </script>
 <script type="text/javascript">
-    window.setTimeout(function() {
-        $(".alert").slideUp(700, function() {
+    window.setTimeout(function () {
+        $(".alert").slideUp(700, function () {
             $(this).remove();
         });
     }, 3000);</script>
-
 </body>
 </html>

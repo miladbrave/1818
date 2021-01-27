@@ -124,10 +124,10 @@
                     <div class="banner owl-carousel">
 
                         <div class="item"><a href="#"><img
-                                    src="{{asset('/front/img/b1.jpg')}}" alt="small banner"
+                                    src="{{asset('/front/img/m1.jpg')}}" alt="small banner"
                                     class="img-responsive"/></a></div>
                         <div class="item"><a href="#"><img
-                                    src="{{asset('/front/img/b2.jpg')}}" alt="small banner1"
+                                    src="{{asset('/front/img/m2.jpg')}}" alt="small banner1"
                                     class="img-responsive"/></a></div>
                     </div>
                 </aside>

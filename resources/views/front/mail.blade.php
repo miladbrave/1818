@@ -24,7 +24,7 @@
         <th style=" border: 1px solid black">شماره فاکتور</th>
     </tr>
     <tr style=" border: 1px solid black">
-        <td style=" border: 1px solid black;text-align: center">{{Verta::instance($userlists->created_at)}}</td>
+        <td style=" border: 1px solid black;text-align: center">{{Verta::instance($userlists->created_at)->format('%B %d، %Y')}}</td>
         <td style=" border: 1px solid black;text-align: center">{{$userlists->receiveprice}}</td>
         <td style=" border: 1px solid black;text-align: center">{{$userlists->totalprice}}</td>
         <td style=" border: 1px solid black;text-align: center">{{$userlists->factor}}</td>
@@ -44,7 +44,7 @@
             @foreach($purchl->where('id',$pur->product_id) as $p)
                 <tr style=" border: 1px solid black">
                     <td style=" border: 1px solid black;text-align: center;width: 30%">
-                        <span style="color: red">{{$p->price}} تومان</span>
+                        <span style="color: red">{{$p->price}} ریال</span>
                     </td>
                     <td style=" border: 1px solid black;text-align: center;width: 20%">{{$pur->count}}تعداد</td>
                     <td style=" border: 1px solid black;text-align: center;width: 20%"> {{$p->name}}</td>

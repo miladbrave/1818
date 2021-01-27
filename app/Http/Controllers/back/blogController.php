@@ -13,7 +13,7 @@ class blogController extends Controller
 
     public function index()
     {
-        $blogs = Blog::with('photo')->paginate(5);
+        $blogs = Blog::with('photo')->get();
         return view('back.blog.index', compact('blogs'));
     }
 

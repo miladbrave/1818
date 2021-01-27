@@ -74,7 +74,7 @@
                                         <i class="fa fa-caret-down"></i></a>
                                     <div id="faq6" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <h5> در سرتاسر کشور، سفارش‌ها از طریق شرکت پست، تی پاکس و باربری ارسال‌‌
+                                            <h5> در سرتاسر کشور، سفارش‌ها از طریق شرکت تیپاکس و باربری ارسال‌‌
                                                 می‌شوند.
                                             </h5>
                                         </div>
@@ -84,8 +84,8 @@
                                         class="panel-title">2. هزینه ارسال سفارش به چه صورت محاسبه و اخذ‌‌ می‌شود؟
                                         <i class="fa fa-caret-down"></i></a>
                                     <div id="faq4" class="panel-collapse collapse">
-                                        <div class="panel-body">هزینه ارسال مطابق قیمتهای مصوب اداره پست و بر حسب وزن
-                                            مرسوله محاسبه و در فاکتور نهایی لحاظ‌‌ می‌گردد.
+                                        <div class="panel-body">هزینه ارسال مطابق قیمتهای مصوب شرکت تیپاکس و باربری، بر حسب وزن
+                                            مرسوله محاسبه و به صورت پس کرایه می باشد.
                                         </div>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                                         class="panel-title">3. آیا‌‌ می‌توانم سفارشم را در روز و ساعت معینی تحویل بگیرم؟
                                         <i class="fa fa-caret-down"></i></a>
                                     <div id="faq5" class="panel-collapse collapse">
-                                        <div class="panel-body">خیر، در ارسالهای پستی امکان تنظیم روز و ساعت در حال حاضر
+                                        <div class="panel-body">خیر، در ارسالی ها امکان تنظیم روز و ساعت در حال حاضر
                                             وجود ندارد.
                                         </div>
                                     </div>

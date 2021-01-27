@@ -16,7 +16,8 @@
                                        type="button"> بازگشت <span class="icon-left-open"></span></a>
                                     <hr>
                                 </h1>
-                                <form action="{{route('messages.send.main')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('messages.send.main')}}" method="post"
+                                      enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-md-6">
@@ -45,6 +46,25 @@
                                     </button>
                                 </form>
                             </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-border table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">نام</th>
+                                        <th class="text-center">متن</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach($messages as $message)
+                                        <tr>
+                                            <td class="text-center">{{$message->name}}</td>
+                                            <td class="text-center">{!! $message->description !!}</td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+
                         </div>
                     </div>
                 </div>

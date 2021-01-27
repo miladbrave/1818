@@ -45,7 +45,7 @@
                                 <!-- panel body -->
                                 <div class="panel-body">
                                     <div class="stack-order">
-                                        <h2 class="no-margins">{{$totalrecive->sum('totalprice')}} تومان</h2>
+                                        <h2 class="no-margins">{{number_format($totalrecive->sum('totalprice'))}} تومان</h2>
                                         <small>{{$totalrecive->count()}} عدد فاکتور </small>
                                     </div>
                                 </div>

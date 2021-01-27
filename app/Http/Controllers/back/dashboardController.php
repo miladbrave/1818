@@ -45,7 +45,8 @@ class dashboardController extends Controller
 
     public function mainmessage()
     {
-        return view('back.admin.adminmessage');
+        $messages  = Message::where('type','public')->latest()->get();
+        return view('back.admin.adminmessage',compact('messages'));
     }
 
     public function chartApi()

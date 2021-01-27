@@ -105,7 +105,7 @@
                                                  style="width: 100%;margin-top: -20%" class="img-responsive">
                                         </div>
                                         <div class="col-md-4 col-xs-4">
-                                            <span>ارسال سریع و مطمن</span>
+                                            <span>ارسال سریع و مطمئن</span>
                                         </div>
                                         <div class="col-md-2 col-xs-2">
                                             <img src="{{asset('/front/img/image2.png')}}" alt="express"
@@ -113,7 +113,7 @@
                                                  style="width: 100%">
                                         </div>
                                         <div class="col-md-2 col-xs-2">
-                                            <span>ضمانت اصل</span>
+                                            <span>ضمانت اصل بودن</span>
                                         </div>
                                     </div>
                                 </div>
@@ -207,10 +207,10 @@
                                 <h4>
                                     <a href="{{route('product.self',$relatedProduct->slug)}}">{{$relatedProduct->name}}</a>
                                 </h4>
-                                @if($product->exist == 1)
-                                    @if($product->discount)
+                                @if($relatedProduct->exist == 1)
+                                    @if($relatedProduct->discount)
                                         <p class="price">
-                                            <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span><br>
+                                            <span class="price-new">{{\App\Helpers\Helpers::discount($relatedProduct->price,$relatedProduct->discount)}} ریال</span><br>
                                             <span
                                                 class="price-old">{{$product->price}} ریال</span>
                                             <span
@@ -218,7 +218,7 @@
                                         </p>
                                     @else
                                         <p class="price">
-                                            <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
+                                            <span class="price-new">{{number_format($relatedProduct->price)}} ریال</span>
                                         </p>
                                     @endif
                                 @elseif($product->exist == 2)

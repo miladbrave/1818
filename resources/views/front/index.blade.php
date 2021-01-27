@@ -869,16 +869,28 @@
         </div>
     </div>
 
-    <div class="modal fade" id="message" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body" id="txtHint">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">بستن</button>
+    @foreach($messages as $message)
+        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-danger">{{$message->name}}</h5>
+                    </div>
+                    <div class="modal-body">
+                        {!! $message->description !!}
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endforeach
+@endsection
+@section('js3')
+    <script>
+        $(document).ready(function(){
+            $('#myModal').modal('show');
+        });
+    </script>
 @endsection

@@ -35,7 +35,8 @@ class HomeController extends Controller
         $banners = Banner::with('photo')->where('distribute', 'انتشار')->get();
         $products = Product::with('photos', 'attributevalus', 'categories')->where('distribute', 'انتشار')->get();
         $videos = Video::with('photo')->get();
-        return view('front.index', compact('navcategories', 'maincategories', 'subcategories', 'sliders', 'banners', 'products', 'videos'));
+        $messages = Message::where('type','public')->latest()->get();
+        return view('front.index', compact('navcategories', 'maincategories', 'subcategories', 'sliders', 'banners', 'products', 'videos','messages'));
     }
 
     public function about()
@@ -382,7 +383,6 @@ class HomeController extends Controller
         return view('front.blog', compact('navcategories', 'maincategories', 'subcategories', 'blogs', 'blogPhotos'));
     }
 
-
     public function video($id)
     {
         $navcategories = Category::where('type', 'null')->get();
@@ -398,6 +398,15 @@ class HomeController extends Controller
         foreach ($photos as $photo) {
             return response()->download(getcwd() . $photos->path);
         }
+    }
+
+    public function test()
+    {
+        Mail::send('front/test',
+            [], function ($m) {
+                $m->from('info@1818kala.ir', 'آذر یدک ریو');
+                $m->to('milad.pourshoja@gmail.com', "milad")->subject('فاکتور خرید(1818kala.ir)');
+            });
     }
 
 }
