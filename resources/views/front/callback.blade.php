@@ -54,7 +54,7 @@
                                                 <td>مبلغ پرداخت</td>
                                                 <td>
                                                     @if($pays->status == 'success')
-                                                        {{number_format($pays->price)}} ریال
+                                                        {{number_format($pays->price)}} تومان
                                                     @endif
                                                 </td>
                                             </tr>

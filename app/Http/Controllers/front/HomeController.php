@@ -33,7 +33,7 @@ class HomeController extends Controller
         $subcategories = Category::whereRaw("type REGEXP '^[0-9]'")->get();
         $sliders = Slider::with('photo')->where('distribute', 'انتشار')->get();
         $banners = Banner::with('photo')->where('distribute', 'انتشار')->get();
-        $products = Product::with('photos', 'attributevalus', 'categories')->where('distribute', 'انتشار')->get();
+        $products = Product::with('photos', 'attributevalus', 'categories')->where('distribute', 'انتشار')->latest()->get();
         $videos = Video::with('photo')->get();
         $messages = Message::where('type','public')->latest()->get();
         return view('front.index', compact('navcategories', 'maincategories', 'subcategories', 'sliders', 'banners', 'products', 'videos','messages'));
@@ -144,6 +144,9 @@ class HomeController extends Controller
         $request->session()->put('cart', $cart);
         Session::flash('buy', 'کالای مورد نظر به سبد خرید افزوده شد.');
 
+//                Session::flash('buy', 'کاربر گرامی با عرض پوزش تا اطلاع ثانوی فروشگاه سایت تعطیل می باشد.');
+
+
         return back();
     }
 
@@ -178,7 +181,6 @@ class HomeController extends Controller
 
     public function updateuser(Request $request)
     {
-
         $user = User::find(auth()->user()->id);
         $user->fname = $request->fname;
         $user->lname = $request->lname;

@@ -2198,7 +2198,7 @@ div.required .control-label:before {
 
 #subscribe {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/sub.jpg") fixed center center;
-    background-size: cover;padding:50px 0;margin-bottom: 5%;font-family: 'IRANSansWeb', sans-serif}
+    background-size: cover;padding:50px 0;margin-bottom: 5%;font-family: 'IRANSansWeb', sans-serif;border-radius: 15px}
 #subscribe h3{color: white;text-align: center}
 #subscribe .subscribe-btn {
    font-weight: 500;font-size: 16px;letter-spacing: 1px;display: inline-block;

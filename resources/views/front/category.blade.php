@@ -62,9 +62,16 @@
                 </ul>
 
                 <div id="content" class="col-sm-9">
+{{--                    @if(Session::has('buy'))--}}
+{{--                        <div class="container" id="alert">--}}
+{{--                            <div class="alert alert-success" style="width: 100%">--}}
+{{--                                <div>{{ Session('buy') }}</div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
                     @if(Session::has('buy'))
                         <div class="container" id="alert">
-                            <div class="alert alert-success" style="width: 100%">
+                            <div class="alert alert-danger" style="width: 100%">
                                 <div>{{ Session('buy') }}</div>
                             </div>
                         </div>

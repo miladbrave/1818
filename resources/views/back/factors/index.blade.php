@@ -108,7 +108,19 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="{{$userlist['id']}}">{{$userlist->fname}}</h5>
+                            <h5 class="modal-title" id="{{$userlist['id']}}"> شماره فاکتور : {{$userlist->factor}}</h5>
+                            <span>
+                                <strong> نوع ارسال : </strong>
+                                @if($userlist->receiveprice == 0)
+                                    <span class="badge badge-danger">تیپاکس</span>
+                                    @elseif($userlist->receiveprice == 1)
+                                    <span class="badge badge-danger">باربری</span>
+                                @elseif($userlist->receiveprice == 2)
+                                    <span class="badge badge-danger">پیک موتوری</span>
+                                @elseif($userlist->receiveprice == 3)
+                                    <span class="badge badge-danger">حضوری</span>
+                                @endif
+                            </span>
                         </div>
                         <div class="modal-body">
                             <div class="row">

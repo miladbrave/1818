@@ -11,14 +11,15 @@
                             <div class="panel-body min-height-100">
                                 <h1 class="page-title">
                                     <span class="fa fa-envelope"></span>
-                                    افزودن پیام جدید
+                                    ویرایش پیام
                                     <a href="{{url()->previous()}}" class="btn btn-default btn-rounded pull-right mob"
                                        type="button"> بازگشت <span class="icon-left-open"></span></a>
                                     <hr>
                                 </h1>
-                                <form action="{{route('messages.send.main')}}" method="post"
+                                <form action="{{route('message.update',$message->id)}}" method="post"
                                       enctype="multipart/form-data">
                                     @csrf
+                                    @method('patch')
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group @if($errors->has('title')) has-error @endif">
@@ -26,7 +27,7 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                                                     <input type="text" class="form-control" name="title" required
-                                                           value="{{old('title')}}">
+                                                           value="{{$message->name}}">
                                                 </div>
                                             </div>
                                         </div>
@@ -36,50 +37,16 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-tag"></i></span>
                                                     <input type="text" class="form-control" name="description" required
-                                                           value="{{old('description')}}">
+                                                           value="{{$message->description}}">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <hr>
-                                    <button class="btn btn-success" type="submit" onclick="productGallery()">ارسال پیام
+                                    <button class="btn btn-success" type="submit" onclick="productGallery()"> ویرایش پیام
                                     </button>
                                 </form>
                             </div>
-                            <div class="table-responsive">
-                                <table class="table table-striped table-border table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th class="text-center">نام</th>
-                                        <th class="text-center">متن</th>
-                                        <th class="text-center">ابزار</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($messages as $message)
-                                        <tr>
-                                            <td class="text-center">{{$message->name}}</td>
-                                            <td class="text-center">{!! $message->description !!}</td>
-                                            <td class="text-center">
-                                                <form method="post"
-                                                      action="{{route('message.destroy', $message->id)}}"
-                                                      style="display: inline">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-default btn-rounded btn-sm"
-                                                            type="submit"><i class="icon-trash"></i> حذف
-                                                    </button>
-                                                </form>
-                                                <a href="{{route('message.edit',$message->id)}}" class="btn btn-default btn-rounded btn-sm"
-                                                   type="submit"><i class="icon-trash"></i> ویرایش
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-
                         </div>
                     </div>
                 </div>

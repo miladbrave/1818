@@ -1,11 +1,16 @@
 @extends('front.layout.master')
 
 @section('content')
-    @if(Session::has('buy'))
-        <div class="alert alert-success container" style="width: 100%">
-            <div>{{ Session('buy') }}</div>
-        </div>
-    @endif
+{{--    @if(Session::has('buy'))--}}
+{{--        <div class="alert alert-success container" style="width: 100%">--}}
+{{--            <div>{{ Session('buy') }}</div>--}}
+{{--        </div>--}}
+{{--    @endif--}}
+@if(Session::has('buy'))
+    <div class="alert alert-danger container" style="width: 100%">
+        <div>{{ Session('buy') }}</div>
+    </div>
+@endif
     <div id="container">
         <div class="container">
             <div class="row">

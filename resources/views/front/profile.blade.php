@@ -236,7 +236,7 @@
                                     @foreach($userlists as $userlist)
                                         <tr>
                                             <td class="text-center">{{$userlist->factor}}</td>
-                                            <td class="text-center">{{$userlist->totalprice}}</td>
+                                            <td class="text-center">{{number_format($userlist->totalprice)}} ریال </td>
                                             <td class="text-center">{{$userlist->receiveprice}}</td>
                                             <td class="text-center">{{$userlist->status}}</td>
                                             <td class="text-center">{{Verta::instance($userlist->created_at)->format('%B %d، %Y')}}</td>
@@ -356,7 +356,7 @@
                                                             class="img-responsive"/>
                                                     @endif
                                                     {{$p->name}}<br>
-                                                    <span class="text-danger">{{$p->price}} تومان</span><br>
+                                                    <span class="text-danger">{{number_format($p->price)}} ریال </span><br>
                                                     تعداد : {{$pur->count}}
                                                 </div>
                                                 @if(isset($userlist->comment))

@@ -42,12 +42,19 @@ class messageController extends Controller
 
     public function edit($id)
     {
-        //
+        $message = Message::find($id);
+        return view('back.admin.adminmessageedit',compact('message'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $message = Message::find($id);
+        $message->description = $request->description;
+        $message->email = "admin";
+        $message->name = $request->title;
+        $message->type = "public";
+        $message->save();
+        return redirect()->route('mainmessage');
     }
 
     public function destroy($id)

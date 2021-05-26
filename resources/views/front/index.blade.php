@@ -1,49 +1,56 @@
 @extends('front.layout.master')
 
 @section('content')
-    @if(Session::has('buy'))
-        <div class="container" id="alert">
-            <div class="alert alert-success" style="width: 100%">
-                <div>{{ Session('buy') }}</div>
-            </div>
+{{--    @if(Session::has('buy'))--}}
+{{--        <div class="container" id="alert">--}}
+{{--            <div class="alert alert-success" style="width: 100%">--}}
+{{--                <div>{{ Session('buy') }}</div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    @endif--}}
+@if(Session::has('buy'))
+    <div class="container" id="alert">
+        <div class="alert alert-danger" style="width: 100%">
+            <div>{{ Session('buy') }}</div>
         </div>
-    @endif
+    </div>
+@endif
     <div class="body">
         <div class="row" style="margin-left: 0px;margin-right: 0px">
             <div id="content" class="col-md-12">
                 <div class="container" style="margin-top: 1%">
                     <div class="slideshow single-slider owl-carousel">
                         @foreach($sliders->where('number','ویژه') as $slider)
-                            <div class="item slider_img"><a href="{{$slider->link}}">
+                            <div class="item slider_img" ><a href="{{$slider->link}}">
                                     @if(isset($slider->photo()->first()->path))
-                                        <img class="img-responsive"
+                                        <img class="img-responsive" style="border-radius: 15px"
                                              src="{{asset($slider->photo()->first()->path)}}"
                                              alt="banner 2"/>
                                     @endif
                                 </a></div>
                         @endforeach
                         @foreach($sliders->where('number',1) as $slider)
-                            <div class="item slider_img"><a href="{{$slider->link}}">
+                            <div class="item slider_img" ><a href="{{$slider->link}}">
                                     @if(isset($slider->photo()->first()->path))
-                                        <img class="img-responsive"
+                                        <img class="img-responsive" style="border-radius: 15px"
                                              src="{{asset($slider->photo()->first()->path)}}"
                                              alt="banner 2"/>
                                     @endif
                                 </a></div>
                         @endforeach
                         @foreach($sliders->where('number',2) as $slider)
-                            <div class="item slider_img"><a href="{{$slider->link}}">
+                            <div class="item slider_img" ><a href="{{$slider->link}}">
                                     @if(isset($slider->photo()->first()->path))
-                                        <img class="img-responsive"
+                                        <img class="img-responsive" style="border-radius: 15px"
                                              src="{{asset($slider->photo()->first()->path)}}"
                                              alt="banner 2"/>
                                     @endif
                                 </a></div>
                         @endforeach
                         @foreach($sliders->where('number',3) as $slider)
-                            <div class="item slider_img"><a href="{{$slider->link}}">
+                            <div class="item slider_img" ><a href="{{$slider->link}}">
                                     @if(isset($slider->photo()->first()->path))
-                                        <img class="img-responsive"
+                                        <img class="img-responsive" style="border-radius: 15px"
                                              src="{{asset($slider->photo()->first()->path)}}"
                                              alt="banner 2"/>
                                     @endif
@@ -57,7 +64,7 @@
                             <div class="col-lg-4 col-md-4 col-xs-12" id="banner1"><a
                                     href="{{$banner->link}}">
                                     @if(isset($banner->photo()->first()->path))
-                                        <img
+                                        <img style="border-radius: 10px"
                                             src="{{asset($banner->photo()->first()->path)}}"
                                             alt="بنر نمونه 2" title="بنر نمونه 2"/>
                                     @endif
@@ -69,7 +76,7 @@
                                 <div class="col-lg-12 col-md-12 col-xs-6 " id="banner"><a
                                         href="{{$banner->link}}">
                                         @if(isset($banner->photo()->first()->path))
-                                            <img
+                                            <img style="border-radius: 10px"
                                                 src="{{asset($banner->photo()->first()->path)}}"
                                                 alt="بنر نمونه 2" title="بنر نمونه 2"/>
                                         @endif
@@ -80,7 +87,7 @@
                                 <div class="col-lg-12 col-md-12 col-xs-6 " id="banner"><a
                                         href="{{$banner->link}}">
                                         @if(isset($banner->photo()->first()->path))
-                                            <img
+                                            <img style="border-radius: 10px"
                                                 src="{{asset($banner->photo()->first()->path)}}"
                                                 alt="بنر نمونه 2" title="بنر نمونه 2"/>
                                         @endif
@@ -92,7 +99,7 @@
                             <div class="col-lg-4 col-md-4 col-xs-12 " id="banner4"><a
                                     href="{{$banner->link}}">
                                     @if(isset($banner->photo()->first()->path))
-                                        <img
+                                        <img style="border-radius: 10px"
                                             src="{{asset($banner->photo()->first()->path)}}"
                                             alt="بنر نمونه 2" title="بنر نمونه 2"/>
                                     @endif
@@ -101,7 +108,6 @@
                         @endforeach
                     </div>
                 </div>
-
                 <div id="product-tab" class="product-tab" style="padding-top: 3%;padding-bottom: 2%">
                     <ul id="tabs" class="nav nav-pills">
                         <li><a href="#tab-motor">لوازم موتوری</a></li>
@@ -117,7 +123,7 @@
                     </ul>
                     <div id="tab-motor" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',1) as $product)
+                            @foreach($products->where('type',1)->take(10) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -176,7 +182,7 @@
                     </div>
                     <div id="tab-gearbox" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',2) as $product)
+                            @foreach($products->where('type',2)->take(10) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -231,7 +237,7 @@
                     </div>
                     <div id="tab-cold" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',10) as $product)
+                            @foreach($products->where('type',10)->take(10) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -286,7 +292,7 @@
                     </div>
                     <div id="tab-ax" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',5) as $product)
+                            @foreach($products->where('type',5)->take(10) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -341,7 +347,7 @@
                     </div>
                     <div id="tab-break" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',8) as $product)
+                            @foreach($products->where('type',8)->take(10) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -397,7 +403,7 @@
                     </div>
                     <div id="tab-elect" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',3) as $product)
+                            @foreach($products->where('type',3)->take(10) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -452,7 +458,7 @@
                     </div>
                     <div id="tab-hidro" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',7) as $product)
+                            @foreach($products->where('type',7)->take(10) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -507,7 +513,7 @@
                     </div>
                     <div id="tab-oil" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',4) as $product)
+                            @foreach($products->where('type',4)->take(10) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -562,7 +568,7 @@
                     </div>
                     <div id="tab-side" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',6) as $product)
+                            @foreach($products->where('type',6)->take(10) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -618,7 +624,7 @@
                     </div>
                     <div id="tab-Decorating" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',9) as $product)
+                            @foreach($products->where('type',9)->take(10) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -874,10 +880,10 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title text-danger">{{$message->name}}</h5>
+                        <h3 class="modal-title text-danger">{{$message->name}}</h3>
                     </div>
                     <div class="modal-body">
-                        {!! $message->description !!}
+                        <p> {!! $message->description !!}</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">Close</button>

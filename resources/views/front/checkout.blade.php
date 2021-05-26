@@ -27,43 +27,29 @@
                                             <div class="panel-heading">
                                                 <h4 class="panel-title"><i class="fa fa-truck"></i> شیوه ی تحویل</h4>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="panel-body ">
                                                 <p>لطفا یک شیوه حمل و نقل انتخاب کنید:</p>
                                                 <div class="row">
-                                                    {{--                                                    <div class="col-md-12">--}}
-                                                    {{--                                                        <label>--}}
-                                                    {{--                                                            <input type="radio" name="send" v-model="selected"--}}
-                                                    {{--                                                                   value="14000">--}}
-                                                    {{--                                                            پست سفارشی</label>--}}
-                                                    {{--                                                    </div>--}}
-                                                    {{--                                                    <div class="col-md-12">--}}
-                                                    {{--                                                        <label>--}}
-                                                    {{--                                                            <input type="radio" name="send" v-model="selected"--}}
-                                                    {{--                                                                   value="20000">--}}
-                                                    {{--                                                            پست پیشتاز</label>--}}
-                                                    {{--                                                    </div>--}}
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 trans">
                                                         <label>
-                                                            <input type="radio" name="send" v-model="selected"
+                                                            <input type="radio" name="send" required
+{{--                                                            <input type="radio" name="send" v-model="selected"--}}
                                                                    value="0">
-                                                            تیپاکس (پس کرایه)</label>
+                                                            تیپاکس (پس کرایه-بر عهده مشتری می باشد)</label>
                                                     </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 trans">
                                                         <label>
-                                                            <input type="radio" name="send" v-model="selected"
-                                                                   value="0">
-                                                            باربری (پس کرایه)</label>
+                                                            <input type="radio" name="send" value="1">
+                                                            باربری (پس کرایه-بر عهده مشتری می باشد)</label>
                                                     </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 trans">
                                                         <label>
-                                                            <input type="radio" name="send" v-model="selected"
-                                                                   value="0">
-                                                            پیک موتوری در تبریز (پس کرایه)</label>
+                                                            <input type="radio" name="send" value="2">
+                                                            پیک موتوری در تبریز (پس کرایه-بر عهده مشتری می باشد)</label>
                                                     </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 trans">
                                                         <label>
-                                                            <input type="radio" name="send" v-model="selected"
-                                                                   value="0">
+                                                            <input type="radio" name="send" value="3">
                                                             دریافت حضوری</label>
                                                     </div>
                                                 </div>
@@ -244,12 +230,14 @@
                                                         <tr>
                                                             <td class="text-right" colspan="4"><strong>هزینه ارسال
                                                                     :</strong></td>
-                                                            <td class="text-right" v-html="selected +  ' ریال '"></td>
+                                                            <td class="text-right" > 0 ریال</td>
+{{--                                                            <td class="text-right" v-html="selected +  ' ریال '"></td>--}}
                                                         </tr>
                                                         <tr>
                                                             <td class="text-right" colspan="4"><strong>جمع کل :</strong>
                                                             </td>
-                                                            <td class="text-right" v-html="paytotal + 'ریال'"> </td>
+                                                            <td class="text-right" >{{Session::get('cart')->totalPrice}} ریال </td>
+{{--                                                            <td class="text-right" v-html="paytotal + 'ریال'"></td>--}}
                                                         </tr>
                                                         </tfoot>
                                                     </table>
@@ -274,25 +262,24 @@
 
 @endsection
 
-@section('js2')
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.9/vue.min.js"></script>
+{{--@section('js2')--}}
+{{--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.9/vue.min.js"></script>--}}
+{{--    <script>--}}
+{{--        vm = new Vue({--}}
+{{--            el: '#app2',--}}
+{{--            data: {--}}
+{{--                selected: "0"--}}
+{{--            },--}}
+{{--            computed: {--}}
+{{--                paytotal: function () {--}}
+{{--                    if (this.selected) {--}}
+{{--                        return parseInt(this.selected) + parseInt({{Session::get('cart')->totalPrice}});--}}
+{{--                    } else {--}}
+{{--                        return 0;--}}
+{{--                    }--}}
+{{--                }--}}
+{{--            }--}}
+{{--        });--}}
+{{--    </script>--}}
 
-    <script>
-        vm = new Vue({
-            el: '#app2',
-            data: {
-                selected: "0"
-            },
-            computed: {
-                paytotal: function () {
-                    if (this.selected) {
-                        return parseInt(this.selected) + parseInt({{Session::get('cart')->totalPrice}});
-                    } else {
-                        return 0;
-                    }
-                }
-            }
-        });
-    </script>
-
-@endsection
+{{--@endsection--}}
