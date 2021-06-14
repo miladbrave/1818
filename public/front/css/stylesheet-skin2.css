@@ -115,7 +115,7 @@ a:hover, a b:hover, .category .tabs li a:hover, .sitemap li a:hover, .pagination
 	background: #00c61c;
 	color:#fff;
 }
-.price, .price-new, .product-info .price { color: #4dae2c;font-size: 30px;padding-top: 10%;padding-bottom: 12% }
+.price, .price-new, .product-info .price { color: #4dae2c;font-size: 20px;padding-top: 10%;padding-bottom: 12% }
 .price-old { color: #ff1900;font-size: 17px; }
 .product-thumb .button-group > button { background-color:#aaa; }
 .product-thumb .button-group > button:hover { background-color:#c68d1e; }

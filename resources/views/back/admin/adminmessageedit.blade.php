@@ -35,9 +35,8 @@
                                             <div class="form-group @if($errors->has('description')) has-error @endif">
                                                 <label><span class="text-danger">*</span>متن پیام</label>
                                                 <div class="input-group">
-                                                    <span class="input-group-addon"><i class="fa fa-tag"></i></span>
-                                                    <input type="text" class="form-control" name="description" required
-                                                           value="{{$message->description}}">
+                                                    <textarea type="text" class="form-control" rows="10" cols="60" name="description" required
+                                                    >{{$message->description}}</textarea>
                                                 </div>
                                             </div>
                                         </div>

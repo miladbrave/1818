@@ -114,7 +114,7 @@
                                                     @endif
                                                 </td>
                                                 <td class="text-right">{{$product['qty']}}عدد</td>
-                                                <td class="text-right">{{$product['price']}} ریال</td>
+                                                <td class="text-right">{{number_format($product['price'])}} ریال</td>
                                             </tr>
                                         @endforeach
                                         </tbody>
@@ -126,18 +126,18 @@
                                             <tbody>
                                             <tr>
                                                 <td class="text-right"><strong>جمع کل</strong></td>
-                                                <td class="text-right">{{Session::get('cart')->totalPurePrice}}ریال
+                                                <td class="text-right">{{number_format(Session::get('cart')->totalPurePrice)}}ریال
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="text-right"><strong>تخفیف</strong></td>
-                                                <td class="text-right">{{Session::get('cart')->totalDiscountPrice}}
+                                                <td class="text-right">{{number_format(Session::get('cart')->totalDiscountPrice)}}
                                                     ریال
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="text-right"><strong>قابل پرداخت</strong></td>
-                                                <td class="text-right">{{Session::get('cart')->totalPrice}}ریال
+                                                <td class="text-right">{{number_format(Session::get('cart')->totalPrice)}}ریال
                                                 </td>
                                             </tr>
                                             </tbody>

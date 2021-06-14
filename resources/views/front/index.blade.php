@@ -1,20 +1,20 @@
 @extends('front.layout.master')
 
 @section('content')
-{{--    @if(Session::has('buy'))--}}
-{{--        <div class="container" id="alert">--}}
-{{--            <div class="alert alert-success" style="width: 100%">--}}
-{{--                <div>{{ Session('buy') }}</div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    @endif--}}
-@if(Session::has('buy'))
-    <div class="container" id="alert">
-        <div class="alert alert-danger" style="width: 100%">
-            <div>{{ Session('buy') }}</div>
+    @if(Session::has('buy'))
+        <div class="container" id="alert">
+            <div class="alert alert-success" style="width: 100%">
+                <div>{{ Session('buy') }}</div>
+            </div>
         </div>
-    </div>
-@endif
+    @endif
+{{--@if(Session::has('buy'))--}}
+{{--    <div class="container" id="alert">--}}
+{{--        <div class="alert alert-danger" style="width: 100%">--}}
+{{--            <div>{{ Session('buy') }}</div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--@endif--}}
     <div class="body">
         <div class="row" style="margin-left: 0px;margin-right: 0px">
             <div id="content" class="col-md-12">
@@ -123,7 +123,7 @@
                     </ul>
                     <div id="tab-motor" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',1)->take(10) as $product)
+                            @foreach($products->where('type',1)->take(6) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -139,9 +139,9 @@
                                             @endif
                                         </a></div>
                                     <div class="caption main">
-                                        <h3>
+                                        <h4>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h3>
+                                        </h4>
                                         @if($product->exist == 1)
                                             @if($product->discount)
                                                 <p class="price">
@@ -182,7 +182,7 @@
                     </div>
                     <div id="tab-gearbox" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',2)->take(10) as $product)
+                            @foreach($products->where('type',2)->take(6) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -198,9 +198,9 @@
                                             @endif
                                         </a></div>
                                     <div class="caption main">
-                                        <h3>
+                                        <h4>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h3>
+                                        </h4>
                                         @if($product->exist == 1)
                                             @if($product->discount)
                                                 <p class="price">
@@ -237,7 +237,7 @@
                     </div>
                     <div id="tab-cold" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',10)->take(10) as $product)
+                            @foreach($products->where('type',10)->take(6) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -253,9 +253,9 @@
                                             @endif
                                         </a></div>
                                     <div class="caption main">
-                                        <h3>
+                                        <h4>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h3>
+                                        </h4>
                                         @if($product->exist == 1)
                                             @if($product->discount)
                                                 <p class="price">
@@ -292,7 +292,7 @@
                     </div>
                     <div id="tab-ax" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',5)->take(10) as $product)
+                            @foreach($products->where('type',5)->take(6) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -308,9 +308,9 @@
                                             @endif
                                         </a></div>
                                     <div class="caption main">
-                                        <h3>
+                                        <h4>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h3>
+                                        </h4>
                                         @if($product->exist == 1)
                                             @if($product->discount)
                                                 <p class="price">
@@ -347,7 +347,7 @@
                     </div>
                     <div id="tab-break" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',8)->take(10) as $product)
+                            @foreach($products->where('type',8)->take(6) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -363,9 +363,9 @@
                                             @endif
                                         </a></div>
                                     <div class="caption main">
-                                        <h3>
+                                        <h4>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h3>
+                                        </h4>
                                         @if($product->exist == 1)
                                             @if($product->discount)
                                                 <p class="price">
@@ -403,7 +403,7 @@
                     </div>
                     <div id="tab-elect" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',3)->take(10) as $product)
+                            @foreach($products->where('type',3)->take(6) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -419,9 +419,9 @@
                                             @endif
                                         </a></div>
                                     <div class="caption main">
-                                        <h3>
+                                        <h4>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h3>
+                                        </h4>
                                         @if($product->exist == 1)
                                             @if($product->discount)
                                                 <p class="price">
@@ -458,7 +458,7 @@
                     </div>
                     <div id="tab-hidro" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',7)->take(10) as $product)
+                            @foreach($products->where('type',7)->take(6) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -474,9 +474,9 @@
                                             @endif
                                         </a></div>
                                     <div class="caption main">
-                                        <h3>
+                                        <h4>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h3>
+                                        </h4>
                                         @if($product->exist == 1)
                                             @if($product->discount)
                                                 <p class="price">
@@ -513,7 +513,7 @@
                     </div>
                     <div id="tab-oil" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',4)->take(10) as $product)
+                            @foreach($products->where('type',4)->take(6) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -529,9 +529,9 @@
                                             @endif
                                         </a></div>
                                     <div class="caption main">
-                                        <h3>
+                                        <h4>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h3>
+                                        </h4>
                                         @if($product->exist == 1)
                                             @if($product->discount)
                                                 <p class="price">
@@ -568,7 +568,7 @@
                     </div>
                     <div id="tab-side" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',6)->take(10) as $product)
+                            @foreach($products->where('type',6)->take(6) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -584,9 +584,9 @@
                                             @endif
                                         </a></div>
                                     <div class="caption main">
-                                        <h3>
+                                        <h4>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h3>
+                                        </h4>
                                         @if($product->exist == 1)
                                             @if($product->discount)
                                                 <p class="price">
@@ -624,7 +624,7 @@
                     </div>
                     <div id="tab-Decorating" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
-                            @foreach($products->where('type',9)->take(10) as $product)
+                            @foreach($products->where('type',9)->take(6) as $product)
                                 <div class="product-thumb clearfix">
                                     <div class="image"><a href="{{route('product.self',$product->slug)}}">
                                             @if(isset($product->photos()->first()->path))
@@ -640,9 +640,9 @@
                                             @endif
                                         </a></div>
                                     <div class="caption main">
-                                        <h3>
+                                        <h4>
                                             <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h3>
+                                        </h4>
                                         @if($product->exist == 1)
                                             @if($product->discount)
                                                 <p class="price">

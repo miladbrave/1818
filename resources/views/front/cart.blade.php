@@ -83,15 +83,14 @@
                                                                      </a>
                                                         @endif
 
-
                                                  </span>
                                                 </form>
                                             </div>
                                         </td>
-                                        <td class="text-center">{{\App\Helpers\Helpers::discount($product['item']->price,$product['item']->discount)}}
+                                        <td class="text-center">{{number_format(\App\Helpers\Helpers::discount($product['item']->price,$product['item']->discount))}}
                                             ریال
                                         </td>
-                                        <td class="text-center">{{$product['price']}} ریال</td>
+                                        <td class="text-center">{{number_format($product['price'])}} ریال</td>
                                     </tr>
                                 @endforeach
                             @endif
@@ -127,21 +126,21 @@
                             <table class="table table-bordered">
                                 <tr>
                                     <td class="text-right"><strong>جمع کل</strong></td>
-                                    <td class="text-right">{{Session::get('cart')->totalPurePrice}}ریال
+                                    <td class="text-right">{{number_format(Session::get('cart')->totalPurePrice)}}ریال
                                 </tr>
                                 <tr>
                                     <td class="text-right"><strong>تخفیف</strong></td>
-                                    <td class="text-right">{{Session::get('cart')->totalDiscountPrice}}
+                                    <td class="text-right">{{number_format(Session::get('cart')->totalDiscountPrice)}}
                                         ریال
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="text-right"><strong>کوپن :</strong></td>
-                                    <td class="text-right"> {{Session::get('cart')->coupon}} ریال</td>
+                                    <td class="text-right"> {{number_format(Session::get('cart')->coupon)}} ریال</td>
                                 </tr>
                                 <tr>
                                     <td class="text-right"><strong>قابل پرداخت</strong></td>
-                                    <td class="text-right">{{Session::get('cart')->totalPrice}} ریال</td>
+                                    <td class="text-right">{{number_format(Session::get('cart')->totalPrice)}} ریال</td>
                                 </tr>
                             </table>
                         </div>

@@ -20,8 +20,6 @@
                                 <form method="post" action="{{route('updateuser')}}">
                                     @csrf
                                     @method('PATCH')
-
-
                                     <div class="col-md-4">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
@@ -39,7 +37,7 @@
                                                     </div>
                                                     <div class="col-md-12 trans">
                                                         <label>
-                                                            <input type="radio" name="send" value="1">
+                                                            <input type="radio" name="send" value="1" checked>
                                                             باربری (پس کرایه-بر عهده مشتری می باشد)</label>
                                                     </div>
                                                     <div class="col-md-12 trans">
@@ -236,7 +234,7 @@
                                                         <tr>
                                                             <td class="text-right" colspan="4"><strong>جمع کل :</strong>
                                                             </td>
-                                                            <td class="text-right" >{{Session::get('cart')->totalPrice}} ریال </td>
+                                                            <td class="text-right" >{{number_format(Session::get('cart')->totalPrice)}} ریال </td>
 {{--                                                            <td class="text-right" v-html="paytotal + 'ریال'"></td>--}}
                                                         </tr>
                                                         </tfoot>

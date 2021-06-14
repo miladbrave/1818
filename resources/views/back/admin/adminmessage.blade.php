@@ -46,40 +46,42 @@
                                     </button>
                                 </form>
                             </div>
-                            <div class="table-responsive">
-                                <table class="table table-striped table-border table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th class="text-center">نام</th>
-                                        <th class="text-center">متن</th>
-                                        <th class="text-center">ابزار</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($messages as $message)
+                            <div class="panel-body min-height-100">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-border table-hover">
+                                        <thead>
                                         <tr>
-                                            <td class="text-center">{{$message->name}}</td>
-                                            <td class="text-center">{!! $message->description !!}</td>
-                                            <td class="text-center">
-                                                <form method="post"
-                                                      action="{{route('message.destroy', $message->id)}}"
-                                                      style="display: inline">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-default btn-rounded btn-sm"
-                                                            type="submit"><i class="icon-trash"></i> حذف
-                                                    </button>
-                                                </form>
-                                                <a href="{{route('message.edit',$message->id)}}" class="btn btn-default btn-rounded btn-sm"
-                                                   type="submit"><i class="icon-trash"></i> ویرایش
-                                                </a>
-                                            </td>
+                                            <th class="text-center">نام</th>
+                                            <th class="text-center">متن</th>
+                                            <th class="text-center">ابزار</th>
                                         </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($messages as $message)
+                                            <tr>
+                                                <td class="text-center">{{$message->name}}</td>
+                                                <td class="text-center">{!! Str::limit($message->description,70) !!}</td>
+                                                <td class="text-center">
+                                                    <form method="post"
+                                                          action="{{route('message.destroy', $message->id)}}"
+                                                          style="display: inline">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button class="btn btn-default btn-rounded btn-sm"
+                                                                type="submit"><i class="icon-trash"></i> حذف
+                                                        </button>
+                                                    </form>
+                                                    <a href="{{route('message.edit',$message->id)}}"
+                                                       class="btn btn-default btn-rounded btn-sm"
+                                                       type="submit"><i class="icon-trash"></i> ویرایش
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

@@ -23,6 +23,7 @@ class CreatePayTable extends Migration
             $table->string('order_id')->nullable()->default(null);
             $table->string('name')->nullable()->default(null);
             $table->text('description')->nullable()->default(null);
+            $table->string('message',255)->nullable()->default(null);
             $table->timestamps();
         });
     }

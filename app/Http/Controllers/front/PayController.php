@@ -43,11 +43,11 @@ class PayController extends Controller
     public function paypack_callback(Request $request)  //موفق یا ناموفق
     {
         try {
-            $pay = Pay::where('transaction_id', ltrim($request->Authority, '0'))->latest()->first();
+            $pay = Pay::where('transaction_id', (int)ltrim($request->Authority, '0'))->latest()->first();
             if (isset($pay)) {
                 $price = (int)$pay->price;
                 $payment = Payment::amount($price)->transactionId($pay->transaction_id)->verify();
-                if ($request->success == "OK") {
+                if ($request->Status == "OK") {
                     $pay->status = 'success';
                     $pay->payment_date = Carbon::now();
                     $pay->order_id = $payment->getReferenceId();
@@ -55,9 +55,9 @@ class PayController extends Controller
                 }
             }
             return redirect()->route('payStatus')->with('success', 'پرداخت موفقیت آمیز');
-
         } catch (InvalidPaymentException $exception) {
             $pay->status = 'failed';
+            $pay->message = $exception->getMessage();
             $pay->save();
             return redirect()->route('payStatus')->with('error', $exception->getMessage());
         }

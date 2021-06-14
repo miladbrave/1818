@@ -28,7 +28,7 @@ class adminController extends Controller
 
     public function show($user)
     {
-        $users = User::paginate(10);
+        $users = User::paginate(20);
         return view('back.admin.user', compact('users'));
     }
 

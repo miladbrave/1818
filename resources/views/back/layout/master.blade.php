@@ -57,6 +57,7 @@
 
 
 @yield('script')
+@yield('js1')
 <script>
     $(document).ready( function () {
         $('#table_id').DataTable();

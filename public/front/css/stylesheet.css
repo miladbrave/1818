@@ -2250,6 +2250,7 @@ div.required .control-label:before {
 .product-thumb .main{
     height: 100px;
 }
+.product-thumb .main h4{font-weight: 600}
 .product-thumb .price .saving{
     background-color: rgba(0,0,0,0.5);
     top: 43px;
