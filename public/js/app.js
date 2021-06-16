@@ -37576,7 +37576,7 @@ var render = function() {
               }
             ],
             staticClass: "form-group",
-            attrs: { name: "maincategory" },
+            attrs: { name: "maincategory", required: "" },
             on: {
               change: [
                 function($event) {

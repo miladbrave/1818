@@ -185,7 +185,7 @@ class productController extends Controller
 
     public function apiGetProducts()
     {
-        $products = Product::all();
+        $products = Product::where('distribute', 'انتشار')->get();
         $response = ['products' => $products];
         return response()->json($response, 200);
     }

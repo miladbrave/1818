@@ -17,6 +17,9 @@
                                         data-target="#modal-location-edit">زرین پال
                                 </button>
 
+                                <button class="btn btn-info btn-sm" data-toggle="modal"
+                                        data-target="#modal-fail-pay">پرداخت های ناموفق
+                                </button>
                                 <hr>
                             </h1>
                             <div class="panel-body wt-panel-body">
@@ -24,13 +27,13 @@
                                     <table class="table table-striped table-border table-hover">
                                         <thead>
                                         <tr>
-                                            <th class="text-center" style="width: 5%">کاربر</th>
-                                            <th class="text-center" style="width: 8%">شماره فاگتور</th>
+                                            <th class="text-center" style="width: 4%">کاربر</th>
+                                            <th class="text-center" style="width: 6%">شماره فاگتور</th>
                                             {{--                                            <th class="text-center">قیمت</th>--}}
-                                            <th class="text-center" style="width: 8%">شهر</th>
+                                            <th class="text-center" style="width: 5%">شهر</th>
                                             <th class="text-center" style="width: 15%">آدرس</th>
-                                            <th class="text-center" style="width: 10%">کدپستی</th>
-                                            <th class="text-center" style="width: 10%">تلفن</th>
+                                            <th class="text-center" style="width: 9%">کدپستی</th>
+                                            <th class="text-center" style="width: 9%">تلفن</th>
                                             <th class="text-center" style="width: 8%">تاریخ</th>
                                             <th class="text-center">وضعیت</th>
                                             <th class="text-center">شناسه</th>
@@ -57,7 +60,7 @@
                                                         <div class="row">
                                                             <div class="clearfix">
                                                                 <div style="margin-right: 5%"
-                                                                    class="radio radio-inline radio-replace radio-success">
+                                                                     class="radio radio-inline radio-replace radio-success">
                                                                     <input type="radio" name="delivery"
                                                                            @if(is_null($userlist->receive) or $userlist->receive == "باربری")
                                                                            checked
@@ -66,7 +69,7 @@
                                                                     <label>باربری</label>
                                                                 </div>
                                                                 <div style="margin-right: 10%"
-                                                                    class="radio radio-inline radio-replace radio-danger">
+                                                                     class="radio radio-inline radio-replace radio-danger">
                                                                     <input type="radio" name="delivery"
                                                                            @if($userlist->receive == "تیپاکس")
                                                                            checked
@@ -80,7 +83,7 @@
                                                                        size="10"
                                                                        value="{{$userlist->shenase}}">
                                                                 <input class="btn btn-default btn-rounded btn-sm"
-                                                                       type="submit" value="ثبت" >
+                                                                       type="submit" value="ثبت">
                                                                 <button class="btn btn-default btn-rounded btn-sm"
                                                                         data-toggle="modal"
                                                                         data-target="#{{$userlist['id']}}"
@@ -105,7 +108,6 @@
             </div>
         </div>
     </div>
-
 
     @if(isset($userlists))
         @foreach($userlists as $userlist)
@@ -170,7 +172,6 @@
         @endforeach
     @endif
 
-
     <div class="modal fade" id="modal-location-edit" role="dialog" aria-labelledby="exampleModalCenterTitle"
          aria-hidden="true">
         <div class="modal-dialog modal-lg send-info modal-dialog-centered" role="document">
@@ -195,6 +196,45 @@
         </div>
     </div>
 
+    <div class="modal fade" id="modal-fail-pay" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg send-info modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">
+                        <i class="now-ui-icons location_pin"></i>
+                        پرداخت های ناموفق
+                    </h5>
+                </div>
+                <div class="modal-body border-top mt-3">
+                    <div class="form-ui dt-sl">
+                        @foreach($pays as $pay)
+                            <div class="table-responsive">
+                                <table class="table table-striped table-border table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center" style="width: 15%">کاربر</th>
+                                        <th class="text-center" style="width: 10%">وضعیت</th>
+                                        <th class="text-center" style="width: 15%">تاریخ</th>
+                                        <th class="text-center">پیام</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-center">{{app\User::find($pay->user_id)->full_name}}</td>
+                                        <td class="text-center">@if($pay->status == "failed") failed @else null  @endif</td>
+                                        <td class="text-center">{{Verta::instance($pay->created_at)->format('%B %d، %Y')}}</td>
+                                        <td class="text-center">{{$pay->message}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
 

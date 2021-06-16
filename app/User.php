@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         $this->notify(new MailResetPasswordToken($token));
     }
+
+    public function getFullNameAttribute()
+    {
+        return $this->fname ." " . $this->lname;
+    }
 }

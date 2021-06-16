@@ -4,6 +4,7 @@ namespace App\Http\Controllers\back;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\front\HomeController;
+use App\Pay;
 use App\Product;
 use App\Purchlist;
 use App\User;
@@ -23,9 +24,9 @@ class factorController extends Controller
         if (!isset($purchlist)) {
             $purchlist = null;
         }
-
+        $pays = Pay::where('status','failed')->orwhereNull('status')->latest()->take(20)->get();
         $purchl = Product::with('photos')->get();
-        return view('back.factors.index', compact('userlists', 'purchlist', 'purchl'));
+        return view('back.factors.index', compact('userlists', 'purchlist', 'purchl','pays'));
     }
 
     public function create()

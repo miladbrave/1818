@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-6">
                 <label class="col-sm-9 control-label">دسته بندی : <span class="text-danger">{{maincategories_select_title[0]}}</span></label>
-                <select class="form-group" name="maincategory" v-model="maincategories_select"
+                <select class="form-group" name="maincategory" v-model="maincategories_select" required
                         @change="mainchange($event)">
                     <option v-if="pro" v-for="maincategoy in maincategories"
                             :value="maincategoy.id">

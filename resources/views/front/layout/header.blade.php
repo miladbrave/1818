@@ -43,7 +43,6 @@
                                         <a href="" onclick="event.preventDefault();
                                                      document.getElementById('profile').submit();"
                                            style="padding-right: 6%;color: red">پروفایل</a><br>
-
                                         @if(auth()->user()->admin == "admin")
                                             <a href="" onclick="event.preventDefault();
                                                      document.getElementById('dashboard').submit();"

@@ -8,20 +8,20 @@
             </div>
         </div>
     @endif
-{{--@if(Session::has('buy'))--}}
-{{--    <div class="container" id="alert">--}}
-{{--        <div class="alert alert-danger" style="width: 100%">--}}
-{{--            <div>{{ Session('buy') }}</div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--@endif--}}
+    {{--@if(Session::has('buy'))--}}
+    {{--    <div class="container" id="alert">--}}
+    {{--        <div class="alert alert-danger" style="width: 100%">--}}
+    {{--            <div>{{ Session('buy') }}</div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
+    {{--@endif--}}
     <div class="body">
         <div class="row" style="margin-left: 0px;margin-right: 0px">
             <div id="content" class="col-md-12">
                 <div class="container" style="margin-top: 1%">
                     <div class="slideshow single-slider owl-carousel">
                         @foreach($sliders->where('number','ویژه') as $slider)
-                            <div class="item slider_img" ><a href="{{$slider->link}}">
+                            <div class="item slider_img"><a href="{{$slider->link}}">
                                     @if(isset($slider->photo()->first()->path))
                                         <img class="img-responsive" style="border-radius: 15px"
                                              src="{{asset($slider->photo()->first()->path)}}"
@@ -30,7 +30,7 @@
                                 </a></div>
                         @endforeach
                         @foreach($sliders->where('number',1) as $slider)
-                            <div class="item slider_img" ><a href="{{$slider->link}}">
+                            <div class="item slider_img"><a href="{{$slider->link}}">
                                     @if(isset($slider->photo()->first()->path))
                                         <img class="img-responsive" style="border-radius: 15px"
                                              src="{{asset($slider->photo()->first()->path)}}"
@@ -39,7 +39,7 @@
                                 </a></div>
                         @endforeach
                         @foreach($sliders->where('number',2) as $slider)
-                            <div class="item slider_img" ><a href="{{$slider->link}}">
+                            <div class="item slider_img"><a href="{{$slider->link}}">
                                     @if(isset($slider->photo()->first()->path))
                                         <img class="img-responsive" style="border-radius: 15px"
                                              src="{{asset($slider->photo()->first()->path)}}"
@@ -48,7 +48,7 @@
                                 </a></div>
                         @endforeach
                         @foreach($sliders->where('number',3) as $slider)
-                            <div class="item slider_img" ><a href="{{$slider->link}}">
+                            <div class="item slider_img"><a href="{{$slider->link}}">
                                     @if(isset($slider->photo()->first()->path))
                                         <img class="img-responsive" style="border-radius: 15px"
                                              src="{{asset($slider->photo()->first()->path)}}"
@@ -65,8 +65,8 @@
                                     href="{{$banner->link}}">
                                     @if(isset($banner->photo()->first()->path))
                                         <img style="border-radius: 10px"
-                                            src="{{asset($banner->photo()->first()->path)}}"
-                                            alt="بنر نمونه 2" title="بنر نمونه 2"/>
+                                             src="{{asset($banner->photo()->first()->path)}}"
+                                             alt="بنر نمونه 2" title="بنر نمونه 2"/>
                                     @endif
                                     <div class="overlay">{{$banner->title}}</div>
                                 </a></div>
@@ -77,8 +77,8 @@
                                         href="{{$banner->link}}">
                                         @if(isset($banner->photo()->first()->path))
                                             <img style="border-radius: 10px"
-                                                src="{{asset($banner->photo()->first()->path)}}"
-                                                alt="بنر نمونه 2" title="بنر نمونه 2"/>
+                                                 src="{{asset($banner->photo()->first()->path)}}"
+                                                 alt="بنر نمونه 2" title="بنر نمونه 2"/>
                                         @endif
                                         <div class="overlay" style="bottom: -12%">{{$banner->title}}</div>
                                     </a></div>
@@ -88,8 +88,8 @@
                                         href="{{$banner->link}}">
                                         @if(isset($banner->photo()->first()->path))
                                             <img style="border-radius: 10px"
-                                                src="{{asset($banner->photo()->first()->path)}}"
-                                                alt="بنر نمونه 2" title="بنر نمونه 2"/>
+                                                 src="{{asset($banner->photo()->first()->path)}}"
+                                                 alt="بنر نمونه 2" title="بنر نمونه 2"/>
                                         @endif
                                         <div class="overlay">{{$banner->title}}</div>
                                     </a></div>
@@ -100,8 +100,8 @@
                                     href="{{$banner->link}}">
                                     @if(isset($banner->photo()->first()->path))
                                         <img style="border-radius: 10px"
-                                            src="{{asset($banner->photo()->first()->path)}}"
-                                            alt="بنر نمونه 2" title="بنر نمونه 2"/>
+                                             src="{{asset($banner->photo()->first()->path)}}"
+                                             alt="بنر نمونه 2" title="بنر نمونه 2"/>
                                     @endif
                                     <div class="overlay">{{$banner->title}}</div>
                                 </a></div>
@@ -124,59 +124,59 @@
                     <div id="tab-motor" class="tab_content">
                         <div class="owl-carousel product_carousel_tab">
                             @foreach($products->where('type',1)->take(6) as $product)
-                                <div class="product-thumb clearfix">
-                                    <div class="image"><a href="{{route('product.self',$product->slug)}}">
-                                            @if(isset($product->photos()->first()->path))
-                                                <img
-                                                    src="{{asset($product->photos()->first()->path)}}"
-                                                    alt="{{$product->name}}" title="{{$product->name}}"
-                                                    class="img-responsive"/>
-                                            @else
-                                                <img
-                                                    src="{{asset('/front/img/1.jpg')}}"
-                                                    alt="آذر یدک ریو" title="آذر یدک ریو"
-                                                    class="img-responsive"/>
+                                    <div class="product-thumb clearfix">
+                                        <div class="image"><a href="{{route('product.self',$product->slug)}}">
+                                                @if(isset($product->photos()->first()->path))
+                                                    <img
+                                                        src="{{asset($product->photos()->first()->path)}}"
+                                                        alt="{{$product->name}}" title="{{$product->name}}"
+                                                        class="img-responsive"/>
+                                                @else
+                                                    <img
+                                                        src="{{asset('/front/img/1.jpg')}}"
+                                                        alt="آذر یدک ریو" title="آذر یدک ریو"
+                                                        class="img-responsive"/>
+                                                @endif
+                                            </a></div>
+                                        <div class="caption main">
+                                            <h4>
+                                                <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
+                                            </h4>
+                                            @if($product->exist == 1)
+                                                @if($product->discount)
+                                                    <p class="price">
+                                                        <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span><br>
+                                                        <span
+                                                            class="price-old">{{$product->price}} ریال</span>
+                                                        <span
+                                                            class="saving">-{{$product->discount}}%</span>
+                                                    </p>
+                                                @else
+                                                    <p class="price">
+                                                        <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
+                                                    </p>
+                                                @endif
+                                            @elseif($product->exist == 2)
+                                                <h4 style="padding-bottom: 15%;font-weight: bold;color: red">موجود نمی
+                                                    باشد.</h4>
                                             @endif
-                                        </a></div>
-                                    <div class="caption main">
-                                        <h4>
-                                            <a href="{{route('product.self',$product->slug)}}">{{$product->name}}</a>
-                                        </h4>
+                                        </div>
                                         @if($product->exist == 1)
-                                            @if($product->discount)
-                                                <p class="price">
-                                                    <span class="price-new">{{\App\Helpers\Helpers::discount($product->price,$product->discount)}} ریال</span><br>
-                                                    <span
-                                                        class="price-old">{{$product->price}} ریال</span>
-                                                    <span
-                                                        class="saving">-{{$product->discount}}%</span>
-                                                </p>
+                                            @if($product->count > 0)
+                                                <div class="button-group pull-right">
+                                                    <h5 class="text-info"> در انبار {{$product->count}} عدد</h5>
+                                                </div>
+                                                <div class="btn btn-success pull-left" style="border-radius: 10px">
+                                                    <a class="btn-success"
+                                                       href="{{route('add.cart',['id'=>$product->id])}}"><span><i
+                                                                class="fa fa-cart-plus" style="font-size: 20px"></i>افزودن به سبد</span>
+                                                    </a>
+                                                </div>
                                             @else
-                                                <p class="price">
-                                                    <span class="price-new">{{number_format(\App\Helpers\Helpers::discount($product->price,$product->discount))}} ریال</span>
-                                                </p>
+                                                <h5>اتمام موجودی!</h5>
                                             @endif
-                                        @elseif($product->exist == 2)
-                                            <h4 style="padding-bottom: 15%;font-weight: bold;color: red">موجود نمی
-                                                باشد.</h4>
                                         @endif
                                     </div>
-                                    @if($product->exist == 1)
-                                        @if($product->count > 0)
-                                            <div class="button-group pull-right">
-                                                <h5 class="text-info"> در انبار {{$product->count}} عدد</h5>
-                                            </div>
-                                            <div class="btn btn-success pull-left" style="border-radius: 10px">
-                                                <a class="btn-success"
-                                                   href="{{route('add.cart',['id'=>$product->id])}}"><span><i
-                                                            class="fa fa-cart-plus" style="font-size: 20px"></i>افزودن به سبد</span>
-                                                </a>
-                                            </div>
-                                        @else
-                                            <h5>اتمام موجودی!</h5>
-                                        @endif
-                                    @endif
-                                </div>
                             @endforeach
                         </div>
                     </div>
@@ -895,7 +895,7 @@
 @endsection
 @section('js3')
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('#myModal').modal('show');
         });
     </script>
