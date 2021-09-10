@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4108efb-c790-428d-82fa-2870f5b18bed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/front/mail2.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/back/factorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/back/factorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/back/productController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/back/productController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back/factors/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back/factors/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/layout/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/front/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/front/HomeController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +172,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shops/resources/views/front/digikala/profile/address.blade.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../shops/resources/views/panel/invoices/index.blade.php" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -433,7 +423,10 @@
       <workItem from="1623650479163" duration="8901000" />
       <workItem from="1623742944110" duration="380000" />
       <workItem from="1623781685145" duration="2903000" />
-      <workItem from="1623828536179" duration="4565000" />
+      <workItem from="1623828536179" duration="4579000" />
+      <workItem from="1623833269044" duration="114000" />
+      <workItem from="1626706729181" duration="2679000" />
+      <workItem from="1626709492758" duration="16000" />
     </task>
     <servers />
   </component>

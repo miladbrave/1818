@@ -361,7 +361,7 @@ class HomeController extends Controller
                 $m->to($user->email, $user->name)->subject('فاکتور خرید(1818kala.ir)');
             });
 
-        Mail::send('front/mail',
+        Mail::send('front/mail2',
             [
                 'user' => $user,
                 'userlists' => $userlists,
