@@ -37556,13 +37556,20 @@ var render = function() {
     _c("hr"),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-6" }, [
-        _c("label", { staticClass: "col-sm-9 control-label" }, [
-          _vm._v("دسته بندی : "),
-          _c("span", { staticClass: "text-danger" }, [
-            _vm._v(_vm._s(_vm.maincategories_select_title[0]))
-          ])
-        ]),
+      _c("div", { staticClass: "col-md-6 form-group" }, [
+        _c(
+          "label",
+          {
+            staticClass: "col-sm-9 control-label",
+            attrs: { for: "categories" }
+          },
+          [
+            _vm._v("دسته بندی : "),
+            _c("span", { staticClass: "text-danger" }, [
+              _vm._v(_vm._s(_vm.maincategories_select_title[0]))
+            ])
+          ]
+        ),
         _vm._v(" "),
         _c(
           "select",
@@ -37575,8 +37582,8 @@ var render = function() {
                 expression: "maincategories_select"
               }
             ],
-            staticClass: "form-group",
-            attrs: { name: "maincategory", required: "" },
+            staticClass: "form-control",
+            attrs: { id: "categories", name: "maincategory", required: "" },
             on: {
               change: [
                 function($event) {
@@ -37600,28 +37607,28 @@ var render = function() {
           },
           [
             _vm._l(_vm.maincategories, function(maincategoy) {
-              return _vm.pro
-                ? _c("option", { domProps: { value: maincategoy.id } }, [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(maincategoy.title) +
-                        "\n                "
-                    )
-                  ])
-                : _vm._e()
+              return _c("option", { domProps: { value: maincategoy.id } }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(maincategoy.title) +
+                    "\n                "
+                )
+              ])
             }),
             _vm._v(" "),
-            _vm._l(_vm.maincategories, function(maincategoy) {
-              return !_vm.pro
-                ? _c("option", { domProps: { value: maincategoy.id } }, [
+            _vm.pro
+              ? _c(
+                  "option",
+                  { domProps: { value: _vm.maincategories_select } },
+                  [
                     _vm._v(
                       "\n                    " +
-                        _vm._s(maincategoy.title) +
+                        _vm._s(_vm.maincategories_select_title[0]) +
                         "\n                "
                     )
-                  ])
-                : _vm._e()
-            })
+                  ]
+                )
+              : _vm._e()
           ],
           2
         )

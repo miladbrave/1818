@@ -16,7 +16,7 @@
             <div class="row">
                 <div id="content" class="col-sm-9">
                     <div itemscope itemtype="{{route('product.self',$product->slug)}}">
-                        <h1 class="title" itemprop="name">{{$product->name}}</h1>
+                        <h1 class="title" itemprop="name" style="font-family: IRANSansWeb">{{$product->name}}</h1>
                         <div class="row product-info">
                             <div class="col-sm-5">
                                 <div class="image">

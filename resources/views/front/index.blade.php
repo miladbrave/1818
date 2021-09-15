@@ -886,7 +886,7 @@
                         <p> {!! $message->description !!}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary pull-right" data-dismiss="modal">بستن</button>
                     </div>
                 </div>
             </div>

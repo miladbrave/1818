@@ -188,7 +188,7 @@ return [
             'mode' => 'sandbox', // can be normal, sandbox, zaringate
             'merchantId' => '654f335c-c725-4ec3-b77c-9e4760e515c7',
             'callbackUrl' => 'http://yoursite.com/path/to',
-            'description' => 'MIL@D',
+            'description' => 'آذر یدک ریو',
         ],
         'zibal' => [
             /* normal api */

@@ -2,16 +2,16 @@
     <div>
         <hr>
         <div class="row">
-            <div class="col-md-6">
-                <label class="col-sm-9 control-label">دسته بندی : <span class="text-danger">{{maincategories_select_title[0]}}</span></label>
-                <select class="form-group" name="maincategory" v-model="maincategories_select" required
+            <div class="col-md-6 form-group">
+                <label for="categories" class="col-sm-9 control-label">دسته بندی : <span class="text-danger">{{maincategories_select_title[0]}}</span></label>
+                <select id="categories" class="form-control" name="maincategory" v-model="maincategories_select" required
                         @change="mainchange($event)">
-                    <option v-if="pro" v-for="maincategoy in maincategories"
-                            :value="maincategoy.id">
-                        {{maincategoy.title}}
+                    <option v-for="maincategoy in maincategories" :value="maincategoy.id">
+                        {{ maincategoy.title }}
                     </option>
-                    <option v-if="!pro" v-for="maincategoy in maincategories" :value="maincategoy.id">
-                        {{maincategoy.title }}
+
+                    <option v-if="pro" :value="maincategories_select">
+                        {{ maincategories_select_title[0] }}
                     </option>
                 </select>
             </div>

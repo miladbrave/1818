@@ -6,14 +6,18 @@
 @if ($level === 'error')
 # @lang('Whoops!')
 @else
+    <div style="text-align: right;direction: rtl">
 # @lang('با سلام')
+    </div>
 @endif
 @endif
 
 {{-- Intro Lines --}}
+<div style="text-align: right;direction: rtl">
 @foreach ($introLines as $line)
 {{ $line }}
 @endforeach
+</div>
 
 {{-- Action Button --}}
 @isset($actionText)
@@ -33,21 +37,23 @@
 @endisset
 
 {{-- Outro Lines --}}
+<div style="text-align: right;direction: rtl">
 @foreach ($outroLines as $line)
 {{ $line }}
 
 @endforeach
-
+</div>
 {{-- Salutation --}}
+<div style="text-align: right;direction: rtl">
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-   اذر یدک ریو,<br>
+   اذر یدک ریو<br>
 
         {{ config('app.name') }}
 
 @endif
-
+</div>
 {{-- Subcopy --}}
 @isset($actionText)
 @slot('subcopy')

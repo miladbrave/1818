@@ -221,7 +221,7 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td class="text-center">{{app\User::find($pay->user_id)->full_name}}</td>
+                                        <td class="text-center">{{app\User::find($pay->user_id)->fullname}}</td>
                                         <td class="text-center">@if($pay->status == "failed") failed @else null  @endif</td>
                                         <td class="text-center">{{Verta::instance($pay->created_at)->format('%B %d، %Y')}}</td>
                                         <td class="text-center">{{$pay->message}}</td>

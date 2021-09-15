@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="form-group row mb-0 ">
-                                <div class="col-md-9" style="float: unset">
+                                <div class="col-md-9" style="text-align: right">
                                     <button type="submit" class="btn btn-primary">
                                         فرستادن لینک بازیابی رمز
                                     </button>

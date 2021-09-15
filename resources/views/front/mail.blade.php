@@ -19,13 +19,21 @@
 <table style=" border: 1px solid black;width: 100%;border-collapse: collapse">
     <tr style=" border: 1px solid black">
         <th style=" border: 1px solid black">تاریخ</th>
-        <th style=" border: 1px solid black">قیمت حمل و نقل</th>
+{{--        <th style=" border: 1px solid black">قیمت حمل و نقل</th>--}}
+        <th style=" border: 1px solid black">نوع حمل</th>
         <th style=" border: 1px solid black">قیمت کل</th>
         <th style=" border: 1px solid black">شماره فاکتور</th>
     </tr>
     <tr style=" border: 1px solid black">
         <td style=" border: 1px solid black;text-align: center">{{Verta::instance($userlists->created_at)->format('%B %d، %Y')}}</td>
-        <td style=" border: 1px solid black;text-align: center">{{$userlists->receiveprice}}</td>
+{{--        <td style=" border: 1px solid black;text-align: center">{{$userlists->receiveprice}}</td>--}}
+        <td style=" border: 1px solid black;text-align: center">
+            @if($userlists->receiveprice == 0)تیپاکس
+            @elseif($userlists->receiveprice == 1) باربری
+            @elseif($userlists->receiveprice == 2) پیک موتوری
+            @elseif($userlists->receiveprice == 3)  حضوری
+            @endif
+        </td>
         <td style=" border: 1px solid black;text-align: center">{{$userlists->totalprice}}</td>
         <td style=" border: 1px solid black;text-align: center">{{$userlists->factor}}</td>
     </tr>

@@ -128,7 +128,7 @@ class HomeController extends Controller
         $product = Product::with('categories', 'photos', 'attributevalus')->where('slug', $slug)->first();
         $brand = Brand::where('id', $product->brand_id)->first();
         $categoryIds = $product->categories->pluck('id')->toArray();
-        $relatedProducts = Product::with('categories', 'photos')->whereHas('categories', function ($q) use ($categoryIds) {
+        $relatedProducts = Product::with('categories', 'photos')->where('distribute', 'انتشار')->whereHas('categories', function ($q) use ($categoryIds) {
             $q->whereIn('categories.id', $categoryIds);
         })->get();
         $randomProducts = Product::with('photos')->get()->random(2);
@@ -272,7 +272,6 @@ class HomeController extends Controller
             ]);
             $validator->validate();
         }
-
         $message = new Message();
         $message->name = $request->name;
         $message->description = $request->description;
@@ -284,12 +283,19 @@ class HomeController extends Controller
             $mail = User::findOrFail($request->id)->email;
             $message->email = $mail;
         }
-
         if ($request->id)
             $message->user_id = $request->id;
 
         $message->save();
         Session::flash('message', ' با تشکر از شما، نظر شما ارسال شد.');
+
+        Mail::send('front/mail3',
+            [
+                'messages' => $message,
+            ], function ($m) {
+                $m->from('info@1818kala.ir', 'آذر یدک ریو');
+                $m->to('Mmodafei@gmail.com', 'تماس با ما')->subject('فاکتور خرید(1818kala.ir)');
+            });
 
         if (isset($request->id)) {
             return redirect()->route('profile');
